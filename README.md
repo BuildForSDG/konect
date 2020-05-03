@@ -40,12 +40,13 @@ All tests should be written in the test folder.
 
 ## Authors
 
-List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
-Israel Ifedayo -- github:  -- Backend dev
-Faith O. Oyedemi -- github @
-Justin Efe -- github: @justinefe
-Aminu Muhammed -- github: @blgguy Backend dev TTL
-Samuel Odunlade -- github: @samuel Fullstack dev
+Team 054
+ - Israel Ifedayo -- github:  -- Twitter: --  Backend dev
+ - Faith O. Oyedemi -- github @
+ - Justin Efe -- github: @justinefe
+ - Aminu Muhammed -- github: @blgguy Backend dev TTL
+ - Samuel Odunlade -- github: @samuel Fullstack dev
+ - Team
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
 First, you can send a mail to buildforsdg@andela.com to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
