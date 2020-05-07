@@ -26,7 +26,7 @@ class model extends DBCon{
 
     public function authEmail($table,$input){
 
-        $db = "SELECT * FROM `$table` WHERE email = '$input' LIMIT 1";
+        $db = "SELECT * FROM $table WHERE email = '$input' LIMIT 1";
         $query = $this->conector->query($db);
 
         if($query->num_rows > 0){
