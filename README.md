@@ -1,12 +1,10 @@
-A one-liner phrase describing this project or app
+An e-market where farmers, buyers and transporters can transact
 
 [![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
 
 ## About
 
-What is this project about. Ok to enrich here or the section above it with an image. 
 
-Once this repo has been setup on Codacy by the TTL, replace the above badge with the actual one from the Codacy dashboard, and add the code coverage badge as well. This is mandatory
 
 This is a simple php starter repo template for setting up your project. The setup contains
 
@@ -18,10 +16,12 @@ This is a simple php starter repo template for setting up your project. The setu
 
 ## Why
 
-Talk about what problem this solves, what SDG(s) and SGD targets it addresses and why these are imoirtant
+One way for the country to escape for her current economic woes is to strengthen the Small and Medium Sized Enterprises (SMEs). This is effort is not only for the government, it would take a joint effort from all stakeholders to pull the country to her feet. This app is one of such efforts to strengthen a sector in the nation - agricultural sector. If an effective system can be put up to make millions of Nigerians patronize thousands of stores in China from the comfort of their homes, then millions of Nigerians can patronize millions of fellow Nigerians from the comfort of their homes at reduced prices since middle men have been cut from the chain. This is the drive behind this application.
+
+Focusing on the Agricultural sector is our own way of targeting three Sustainable Development Goals at once - No poverty, Zero hunger and Decent work/Economic growth. 
 
 ## Usage
- How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup
+Users would register on the application under three different categories - Farmers, Customers and Transporters. Customers can browse the market section to views Farmers, their products and prices. After making purchase, the customer can then link up with an transporter of choice to deliver the products purchased.
 
 
 ## Setup
@@ -42,11 +42,12 @@ All tests should be written in the test folder.
 
 Team 054
  - Israel Ifedayo -- github:  -- Twitter: --  Backend dev
- - Faith O. Oyedemi -- github @
+ - Faith O. Oyedemi -- github @lere01 
  - Justin Efe -- github: @justinefe
  - Aminu Muhammed -- github: @blgguy Backend dev TTL
  - Samuel Odunlade -- github: @samuel Fullstack dev
- - Team
+ 
+ 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
 First, you can send a mail to buildforsdg@andela.com to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
@@ -56,11 +57,7 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 ## Acknowledgements
 
-Did you use someone else’s code?
-Do you want to thank someone explicitly?
-Did someone’s blog post spark off a wonderful idea or give you a solution to nagging problem?
-
-It's powerful to always give credit.
+---
 
 ## LICENSE
 MIT
