@@ -41,7 +41,8 @@ All tests should be written in the test folder.
 ## Authors
 
 Team 054
- - Cliff joy        -- github:                -- Twitter: --  Backend dev
+ - Cliff Gor        -- github: @cliffgor      -- Twitter: --  Programm Asisstant
+ - Tobi Taiwo       -- github: @rebirthtobi   -- Twitter: --  Mentor
  - Israel Ifedayo   -- github: @ifedeejoy     -- Twitter: --  Backend dev
  - Faith O. Oyedemi -- github  @lere01        -- Twitter: --  Backend dev
  - Justin Efe       -- github: @justinefe     -- Twitter: --  frontend dev
