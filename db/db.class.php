@@ -9,7 +9,7 @@ class DB
 	private $host = 'localhost';
 	private $username = 'root';
 	private $password = '';
-	private $database = 'CREATE DATABASE IF NOT EXISTS konect';
+	private $database = 'CREATE DATABASE IF NOT EXISTS farmKonect';
 	
 	public $conn;
 

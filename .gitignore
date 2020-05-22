@@ -6,3 +6,6 @@ composer.lock
 
 # php cs fixer cache file
 .php_cs.cache
+
+# database file
+/backup_db
