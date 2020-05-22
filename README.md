@@ -41,11 +41,13 @@ All tests should be written in the test folder.
 ## Authors
 
 Team 054
- - Israel Ifedayo -- github:  -- Twitter: --  Backend dev
- - Faith O. Oyedemi -- github @lere01 
- - Justin Efe -- github: @justinefe
- - Aminu Muhammed -- github: @blgguy Backend dev TTL
- - Samuel Odunlade -- github: @samuel Fullstack dev
+ - Cliff Gor        -- github: @cliffgor      -- Twitter: --  Programm Asisstant
+ - Tobi Taiwo       -- github: @rebirthtobi   -- Twitter: --  Mentor
+ - Israel Ifedayo   -- github: @ifedeejoy     -- Twitter: --  Backend dev
+ - Faith O. Oyedemi -- github  @lere01        -- Twitter: --  Backend dev
+ - Justin Efe       -- github: @justinefe     -- Twitter: --  frontend dev
+ - Aminu Muhammed   -- github: @blgguy        -- Twitter @blg_guy -- Backend dev TTL
+ - Samuel Odunlade  -- github: @balogunquadri -- Twitter: --  Fullstack dev
  
  
 ## Contributing
