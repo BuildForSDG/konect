@@ -7,5 +7,10 @@ composer.lock
 # php cs fixer cache file
 .php_cs.cache
 
+<<<<<<< HEAD
 # database file
 /backup_db
+=======
+# database.
+backup_db
+>>>>>>> login/reg
