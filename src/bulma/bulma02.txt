@@ -1,0 +1,45 @@
+﻿const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/bundle.js'
+  },
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              // options...
+            }
+          }
+        ]
+    }]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/mystyles.css'
+    }),
+  ]
+};
+This setup takes the src folder as input, and outputs in the dist folder.
+
+4. Create a src folder#
+Create a src folder in which you add a file called index.js with the following content:
+
+require('./mystyles.scss');
+5. Create a Sass file#
+Inside the same src folder, add a file called mystyles.scss:
+
+@charset "utf-8";
+@import "~bulma/bulma";
+

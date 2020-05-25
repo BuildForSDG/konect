@@ -1,4 +1,31 @@
 <?php
+require_once('./src/header.php');
+
+define('DS', DIRECTORY_SEPARATOR);
+define('BASE_PATH', __DIR__.DS);
+require BASE_PATH.'vendor/autoload.php';
+
+$app            = System\App::instance();
+$app->request   = System\Request::instance();
+$app->route     = System\Route::instance($app->request);
+
+$route          =$app->route;
+//$route->any('/', function(){
+//	echo "Hello world";
+//});
+
+$route->any('/signin', function(){
+	require_once('./src/signin.php');
+});
+
+$route->get(['/', 'index', 'home'], function(){
+	echo "Hello home";
+});
+
+$route->end();
+?>
+
+<?php
 //require "vendor/autoload.php";
 
 //use App\Project;
