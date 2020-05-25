@@ -1,5 +1,4 @@
 <?php
-require_once('./src/header.php');
 
 define('DS', DIRECTORY_SEPARATOR);
 define('BASE_PATH', __DIR__.DS);
@@ -15,7 +14,7 @@ $route          =$app->route;
 //});
 
 $route->any('/signin', function(){
-	require_once('./src/signin.php');
+	header('Location: ./src/signin.php');
 });
 
 $route->get(['/', 'index', 'home'], function(){
