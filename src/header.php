@@ -1,67 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../inc/node_modules/bulma/css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" href="bulma/main.sass">
-	<link rel="stylesheet" href="../inc/node_modules/fontawesome/css/all.css">
-	<script src="../inc/jquery.js"></script>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../inc/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../inc/dist/css/main.css">
+  <link rel="stylesheet" href="../inc/dist/fontawesome/css/all.css">
+  <script src="../inc/dist/js/jquery.min.js"></script>
+  <script src="../inc/dist/js/bootstrap.min.js"></script>
+  <script src="../inc/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../inc/dist/js/jquery.slim.js"></script>
 </head>
-<body class="has-navbar-fixed-top">
-<nav class="navbar primary is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="#Home">
-      <img src="../inc/img/logo-color-2.png" width="35" height="35"><h1 class="logo">FarmKonect</h1>
-    </a>
-
-    <a role="button" class="navbar-burger burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu is-active">
-    <div class="navbar-start specail">
-      <a href="#Home" class="navbar-item">
-        Home
+<body>
+<nav class="navbar is-fixed-top navbar-expand-lg color">
+      <a class="navbar-brand" href="#">
+        <img src="../inc/img/logo-color.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        FarmKonect
       </a>
-
-      <a href="#Market" class="navbar-item">
-        Market
-      </a>
-
-      <a href="#Agent" class="navbar-item">
-        Agent
-      </a>
-
-      <a href="#Blog" class="navbar-item">
-        Blog
-      </a>
-
-      <a href="#FAQS" class="navbar-item">
-        FAQS
-      </a>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button btn">
-            <strong>SignUp</strong>
-          </a>
-          <a class="button is-light">
-            Login
-          </a>
-          <a class="button is-light">
-            ShopCat
-          </a>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Market</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Agents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Help
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">About</a>
+              <a class="dropdown-item" href="#">Contact Us</a>
+              <a class="dropdown-item" href="#">FAQS</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Support us</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
-  </div>
-</nav>
+      <button class="btn btn-color" type="button">Login</button>
+      <a class="btn btn-aa">
+        <span>
+          <i class="fas fa-cart-plus"></i>
+        </span>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-iconn"><i class="fas fa-grip-horizontal"></i></span>
+      </button>
 
+    </nav>

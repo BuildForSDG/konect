@@ -1,40 +1,176 @@
 <?php require_once('header.php')?>	
-<section class="hero is-primary">
-  <div class="hero-body">
-    <p class="title">
-      Documentation
-    </p>
-    <p class="subtitle">
-      Everything you need to <strong>create a website</strong> with Bulma
-    </p>
-  </div>
-</section>
-<section class="section">
-	<div class="container">
-		<h2 class="title">Hello Bulma</h2>
-		<p class="subtitle">My first script with <strong>Bulma..</strong></p>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" style="height: 200px;" src="../inc/img/01.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" style="height: 200px;" src="../inc/img/02.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" style="height: 200px;" src="../inc/img/03.png" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <br>
+
+<!-- // card carousel -->
+    <!--Carousel Wrapper-->
+	<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+	  <!--Controls-->
+	  <div align="center" class="controls-top">
+	    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-arrow-alt-circle-left"></i></a>
+	    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-arrow-alt-circle-right"></i></a>
+	  </div>
+	  <!--/.Controls-->
+
+	  <!--Indicators-->
+	  <ol class="carousel-indicators">
+	    <li data-target="#multi-item-example" data-slide-to="0" class="active"><i class="fas fa-dot-circle"></i></li>
+	    <li data-target="#multi-item-example" data-slide-to="1"><i class="fas fa-dot-circle"></i></li>
+	    
+	  </ol>
+	  <!--/.Indicators-->
+
+	  <!--Slides-->
+	  <div class="carousel-inner" role="listbox">
+
+	    <!--First slide-->
+	    <div class="carousel-item active">
+
+	      <div class="col-md-3" style="float:left">
+	       <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/01.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/02.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/03.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+	      
+	       <div class="col-md-3" style="float:left">
+	       <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/04.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	    </div>
+	    <!--/.First slide-->
+
+	    <!--Second slide-->
+	    <div class="carousel-item">
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/05.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/06.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/02.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+	      
+	      <div class="col-md-3" style="float:left">
+	        <div class="card mb-2">
+	          <img class="card-img-top"
+	            src="../inc/img/04.png" alt="Card image cap">
+	          <div class="card-body">
+	            <h4 class="card-title">Card title</h4>
+	            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+	              card's content.</p>
+	            <a class="btn btn-primary">Add to cart</a>
+	          </div>
+	        </div>
+	      </div>
+
+	    </div>
+	    <!--/.Second slide-->
+
+	   
+
+	  </div>
+	  <!--/.Slides-->
+
 	</div>
-</section>
-<div class="columns">
-	<div class="column">Aminu One</div>
-	<div class="column">Aminu Two</div>
-	<div class="column">Aminu Three</div>
-	<div class="column">Aminu Four</div>
-	<div class="column">Aminu Five</div>
-	<div class="column">Aminu Six</div>
-</div>
-<section class="section">
-	<div class="container">
-		<button class="button">Button</button>
-		<button class="button is-primary">Primary Button</button>
-		<button class="button is-large">Large Button</button>
-		<button class="button is-loading">Loading Button</button>
-		<h2 class="title">Hello Bulma</h2>
-		<p class="subtitle">My first script with <strong>Bulma..</strong></p>
-	</div>
-</section>
-
-
-
+	<div align="center" class="controls-top">
+	    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-arrow-alt-circle-left"></i></a>
+	    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-arrow-alt-circle-right"></i></a>
+	  </div>
+	<!--/.Carousel Wrapper-->
 
 <?php require_once('footer.php')?>

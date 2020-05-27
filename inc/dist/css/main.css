@@ -1,0 +1,159 @@
+body{
+      padding: 0;
+      margin-top: 60px;
+      font-family: 'Ubuntu', monospace, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: #0f0f0f;
+}
+.navbar-toggler-iconn{
+      color: #FFD600;
+      font-size: 30px;
+}
+.navbar-toggler-iconn:hover{
+      color: #FFD600;
+      font-size: 32px;
+}
+.btn-color{
+      color: #FFD600;
+      font-weight: bold;
+      background: #16C079;
+      border: 2px solid #FFD600;
+      box-shadow: 0px 4px 4px rgba(0, 10, 0, 0.25);
+      border-radius: 30px;
+}
+.btn-color:hover{
+      color: #FFD600;
+      background: rgba(0, 10, 0, 0.25);
+      border: 3px solid #FFD600;
+      border-radius: 20px;
+}
+.btn-aa{
+      color: #FFD600;
+      background-color: #16C079;
+      border: 2px solid #FFD600;
+      box-shadow: 0px 4px 4px rgba(0, 10, 0, 0.25);
+      border-radius: 45%;
+}
+.btn-aa:hover{
+      color: #FFD600;
+      background: rgba(0, 10, 0, 0.25);
+      border: 3px solid #FFD600;
+      border-radius: 20px;
+}
+.btn-aa span{
+      color: #FFD600;
+      width: 30px;
+      height: 30px;
+}
+.color{
+      background-color: #16C079;
+      color: #FFD600;
+}
+.color a{
+      color: #FFD600;
+      font-weight: bold;
+}
+.color a:hover{
+      color: #FFD600;
+      background: rgba(0, 0, 0, 0.25);
+}
+/**
+* fixed css
+*
+**/
+.navbar.is-fixed-bottom,.navbar.is-fixed-top{left:0;position:fixed;right:0;z-index:30}
+.navbar.is-fixed-bottom.has-shadow{box-shadow:0 -2px 0 0 #f5f5f5}
+body.has-navbar-fixed-top,html.has-navbar-fixed-top{padding-top:3.25rem}
+.navbar.is-fixed-top{left:0;position:fixed;right:0;z-index:30}
+.navbar.is-fixed-top{top:0}
+body.has-navbar-fixed-bottom,html.has-navbar-fixed-bottom{padding-bottom:3.25rem}
+.navbar.is-fixed-bottom{left:0;position:fixed;right:0;z-index:30}  
+.navbar.is-fixed-bottom{bottom:0}    
+
+/**
+.fab-fa-facebook-square{
+      font-size: 26px; 
+      color: Mediumslateblue;
+}
+.fab-fa-twitter-square{
+      font-size: 26px; 
+      color: Dodgerblue;
+}
+.fab-fa-github-square{
+      font-size: 26px; 
+      color: #010101;
+}
+.color{
+      background-color: #16C079;
+      color: #FFD600;
+}
+
+.logo{
+      font-family: Rockwell Haettenschweiler;
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFD600;
+}
+.specail{
+      font-weight: bold;
+      color: #FFD600;
+}
+.specail:hover{
+      font-weight: bold;
+      color: #16C079;
+}
+.bmtn{
+      background: #FFD600;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+}
+footer h1{
+      margin-bottom: 55px !important;
+      color: #fff !important;
+}
+footer .content ul{
+      padding: 0;
+      margin: 0;
+}
+footer .content ul li{
+      list-style-type: none;
+      text-align: center;
+      padding: 5px;
+}
+footer .content ul li a{
+      color: #FFD600;
+      font-size: 18px;
+}
+footer .content ul li a:hover{
+      color: #ddd;
+}
+footer h6{
+      text-align: center;
+      color: #fff !important;
+      font-size: 30px !important;
+      margin-bottom: 25px !important;
+}
+footer .is-success{
+      margin-top: 15px;
+}
+footer .fa{
+      padding-right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+}
+footer .control.has-icons-left .icon.is-left{
+      left: 5px;
+}
+footer p{
+      font-size: 18px;
+}
+footer .is-success:hover{
+      background: #0f8438 !important;
+}
+      @media(max-width: 768px){
+footer .bottom p,.has-text-right{
+      text-align: center !important;
+}
+}
+**/
