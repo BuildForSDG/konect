@@ -2,7 +2,7 @@
 
 define('DS', DIRECTORY_SEPARATOR);
 define('BASE_PATH', __DIR__.DS);
-require BASE_PATH.'vendor/autoload.php';
+require BASE_PATH.'./inc/route/vendor/autoload.php';
 
 $app            = System\App::instance();
 $app->request   = System\Request::instance();

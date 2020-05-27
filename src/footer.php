@@ -1,9 +1,53 @@
-<footer>
+
 	<div class="container">
 		<h2 class="title">This is a footer...</h2>
 		<p class="subtitle">&copy FarmKonect Nig LTD <strong>2020</strong></p>
 	</div>
-</footer>
+<footer class="footer primary">
+      <div class="content has-text-centered has-text-white">
+        <h1>FarmKonect</h1>
+        <div class="columns">
+          <div class="column">
+            <h6>About Us</h6>
+            <p class="has-text-center">FarmKonect....
+            </p>
+          </div>
+          <div class="column">
+            <h6>Links</h6>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Agent</a></li>
+              <li><a href="#">Market</a></li>
+              <li><a href="#">FAQS</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h6>Subscribe</h6>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium" type="email" placeholder="Email">
+              <span class="icon is-left">
+              <i class="fa fa-envelope"></i>
+              </span>
+            </div>
+            <a class="button is-success is-rounded">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="has-background-success has-text-white bottom">
+      <div class="container is-fluid">
+        <div class="columns">
+          <div class="column">
+            <p>FarmKonect &copy 2020 Developed with <span style="color: red;"><i class="fas fa-heart"></i></span> by Team-045</p>
+          </div>
+          <div class="column has-text-right">
+          		<a href="#"><i class="fab fa-facebook-square"></i></a>
+            	<a href="#"><i class="fab fa-twitter-square"></i></a>
+            	<a href="#"><i class="fab fa-github-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
 <script type="text/javascript">
 
 // Vanilla JS..

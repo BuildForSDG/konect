@@ -1,24 +1,15 @@
 # Third party modules
-vendor
+#vendor
 
 #composer lock file
 composer.lock
 
 # PHP
-index.php
+#index.php
 
-# CSS
-ui.css
-icon.css
-
-#text
-/src/000.txt
-/src/bulma.txt
-/src/bulma02.txt
 
 # un use Foldders
-/dist
-/inc
+#/inc
 
 #Larabel
 /laravel
@@ -26,10 +17,4 @@ icon.css
 # php cs fixer cache file
 .php_cs.cache
 
-<<<<<<< HEAD
-# database file
-/backup_db
-=======
-# database.
-backup_db
->>>>>>> login/reg
+
