@@ -1,36 +1,35 @@
-<?php require_once('header.php');
-?>	
-<div class="hero is-primary">
-      <div class="hero-body">
-        <h1 class="title has-text-centered is-size-2">Login Form in Bulma</h1>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="notification is-light">
-              <figure class="image container is-64x64">
-                <img src="bulma.png">
-              </figure>
-              <div class="field">
-                <label class="label">Name</label>
-                <p class="control has-icons-left has-icons-right">
-                  <input class="input" type="email" placeholder="Email">
-                  <span class="icon is-small is-left">
+<?php require_once('header.php');?>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8"></div>
+    <div class="col-md-4">
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input name="username" type="email" class="form-control" placeholder="Enter email">
+          <small class="form-text">error ...</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input name="password" type="password" class="form-control" placeholder="Password">
+          <small class="form-text">error ...</small>
+        </div>
+        <div class="form-group form-check">
+          <input name="check" type="checkbox" class="form-check-input">
+          <label class="form-check-label" for="exampleCheck1">Keep me login</label>
+        </div>
+        <button type="submit" name="signup" class="btn btn-color">SignUp</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
+
+<?php require_once('footer.php');?>
                   <i class="fas fa-envelope"></i>
                   </span>
-                </p>
-              </div>
-              <div class="field">
-                <label class="label">Password:</label>
-                <p class="control has-icons-left">
-                  <input class="input" type="password" placeholder="Password">
                   <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                   </span>
-                </p>
-              </div>
-              <a class="button is-info is-rounded is-outlined is-medium">Login</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-<?php require_once('footer.php')?>
+                

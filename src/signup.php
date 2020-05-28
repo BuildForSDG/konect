@@ -1,52 +1,71 @@
 <?php require_once('header.php');?>
 
 <div class="container-fluid">
-	<form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
+	<div class="row">
+		<div class="col-8"></div>
+		<div class="col-md-4">
+			<form action="" method="post">
+		        <div class="form-row">
+		          <div class="form-group col-md-6">
+		            <label for="inputname">First Name <i style="color: red">*</i></label>
+		            <input name="fname" type="text" class="form-control" placeholder="First Name" required>
+		            <small class="form-text">error ...</small>
+		          </div>
+		          <div class="form-group col-md-6">
+		            <label for="inputname">Last Name <i style="color: red">*</i></label>
+		            <input name="lname" type="text" class="form-control" placeholder="Last Name" required>
+		            <small class="form-text">error ...</small>
+		          </div>
+		        </div>
+		        <div class="form-row">
+		          <div class="form-group col-md-6">
+		            <label for="inputEmail4">Email <i style="color: red">*</i></label>
+		            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+		            <small class="form-text">error ...</small>
+		          </div>
+		          <div class="form-group col-md-6">
+		            <label for="inputPassword4">Password</label>
+		            <input name="pass" type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+		            <small class="form-text">error ...</small>
+		          </div>
+		        </div>
+		        <div class="form-row">
+		        	<div class="form-group col-md-6">
+		        		<label for="inputGender">Gender</label><br>
+		        		<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="male" value="m" id="inlineRadio1" value="option1">
+						  <label class="form-check-label" for="inlineRadio1">Male</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="female" value="f" id="inlineRadio2" value="option2">
+						  <label class="form-check-label" for="inlineRadio2">Female</label>
+						</div>
+		        	</div>
+		        	<div class="form-group col-md-6">
+		          		<label for="inputState">State <i style="color: red">*</i></label>
+		            		<select id="inputState" class="form-control">
+		              		<option selected>Choose...</option>
+		              		<option>...</option>
+		            		</select>
+		            </div>
+		        </div>
+		        <div class="form-group">
+		          <label for="inputAddress">Address <i style="color: red">*</i></label>
+		          <input name="email" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		        </div>
+		        <div class="form-group">
+		          <div class="form-check">
+		            <input name="accept" class="form-check-input" type="checkbox" id="gridCheck">
+		            <label class="form-check-label" for="gridCheck">
+		              do you agree with our <a href="#">terms an condition</a>
+		            </label>
+		          </div>
+		        </div>
+		        <button type="submit" class="btn btn-color">Sign Up</button><hr>
+		    </form>
+		</div>
+		
+	</div>
 </div>
 
 <?php require_once('footer.php');?>

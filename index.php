@@ -16,9 +16,18 @@ $route          =$app->route;
 $route->any('/signin', function(){
 	header('Location: ./src/signin.php');
 });
+$route->any('/signup', function(){
+	header('Location: ./src/signup.php');
+});
+$route->any('/signin', function(){
+	header('Location: ./src/agent.php');
+});
+$route->any('/signin', function(){
+	header('Location: ./src/product.php');
+});
 
 $route->get(['/', 'index', 'home'], function(){
-	echo "Hello home";
+	header('Location: ./src/home.php');
 });
 
 $route->end();

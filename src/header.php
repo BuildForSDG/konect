@@ -47,12 +47,8 @@
           </li>
         </ul>
       </div>
-      <button class="btn btn-color" type="button">Login</button>
-      <a class="btn btn-aa">
-        <span>
-          <i class="fas fa-cart-plus"></i>
-        </span>
-        </a>
+      <a href="signin"><button class="btn btn-color" type="button">Login</button></a>
+        <a href="#"><span><i class="fas fa-cart-plus"></i></span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-iconn"><i class="fas fa-grip-horizontal"></i></span>
       </button>
