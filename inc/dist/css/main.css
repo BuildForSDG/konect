@@ -64,6 +64,17 @@ body a:hover{
       color: red;
       background-color: #fff;
 }
+
+.nav-link .user-img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-link .user-img img{
+  width: 100%;
+}
 /**
 * fixed css
 *

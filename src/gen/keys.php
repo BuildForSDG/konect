@@ -1,13 +1,15 @@
 <?php
+define("URL", "http://localhost/2020/BuildForSDG/team045/konect-Backend/");
+define("UPLOAD", URL."inc/ufl/");
 /**
  * this class deals with our datatbase configuration
  */
 class DBCon{
 
     private $host 		= 'localhost';
-    private $username 	= 'konect';
-    private $password 	= '*******';
-    private $database 	= 'konect';
+    private $username 	= 'root';
+    private $password 	= '';
+    private $database 	= 'farmkonect';
     
     protected $conector;
     

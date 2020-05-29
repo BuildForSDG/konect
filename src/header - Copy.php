@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
-  $profile  = '';
-  $fname    = '';
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +14,68 @@ if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
   <script src="../inc/dist/js/bootstrap.min.js"></script>
   <script src="../inc/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../inc/dist/js/jquery.slim.js"></script>
+  <style type="text/css">
+/**
+.rounded-circle {
+  border-radius: 50% !important;
+}
+.avatar {
+  color: #fff;
+  background-color: #adb5bd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.avatar+.avatar-content {
+  display: inline-block;
+  margin-left: .75rem;
+}
+
+.avatar-lg {
+  width: 58px;
+  height: 58px;
+  font-size: 0.875rem;
+}
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+
+.avatar-group .avatar {
+  position: relative;
+  z-index: 2;
+  border: 2px solid #fff;
+}
+
+.avatar-group .avatar:hover {
+  z-index: 3;
+}
+**/
+.user-img{
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-img img{
+  width: 100%;
+}
+
+  </style>
 </head>
 <body>
 <nav class="navbar is-fixed-top navbar-expand-lg color">
@@ -53,18 +111,52 @@ if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
           </li>
         </ul>
       </div>
-      <a href="signin"><button class="btn btn-color" type="button">Login</button></a>&nbsp;&nbsp;
-        <a href="#"><span><i class="fas fa-cart-plus"></i></span></a>&nbsp;&nbsp;
+      <a href="signin"><button class="btn btn-color" type="button">Login</button></a>
+        <a href="#"><span><i class="fas fa-cart-plus"></i></span></a>
         <!--//start profiles -->
-      <?php 
-      if ($profile && $fname) {
-       ?>
-      <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="user-img">
+                <img alt="Image placeholder" src="../inc/img/05.png
+">
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+            <div class=" dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Welcome!</h6>
+            </div>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>My profile</span>
+            </a>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-settings-gear-65"></i>
+              <span>Settings</span>
+            </a>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-calendar-grid-58"></i>
+              <span>Activity</span>
+            </a>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-support-16"></i>
+              <span>Support</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#!" class="dropdown-item">
+              <i class="ni ni-user-run"></i>
+              <span>Logout</span>
+            </a>
+          </div>
+        </li>
+        </ul>
+       
+      <!--ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img style="border-radius: 50%; height: 35px; width: 35px;" src="<?php echo $profile;?>"><b> Hi <i><?php echo $fname;?></i></b>
+              <img style="height: 40px; width: 40px;" src="../inc/img/02.png">
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Dashboard</a>
               <a class="dropdown-item" href="#">Notification</a>
               <a class="dropdown-item" href="#">Edit Profile</a>
@@ -72,10 +164,7 @@ if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
               <a class="dropdown-item" href="./logout.php">LogOut</a>
             </div>
           </li>
-      </ul>
-      <?php
-      }
-      ?>
+      </ul-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-iconn"><i class="fas fa-grip-horizontal"></i></span>
       </button>

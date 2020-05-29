@@ -1,5 +1,29 @@
-<?php require_once('header.php')?>	
+<?php
+include_once('./gen/function.php');
+ 
+session_start();
 
+$profile = "";
+$fname = "";
+//return to login if not logged in
+if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){
+	$fname    = 'Guest';
+}else{
+$user = new model();
+
+//fetch user data
+$sql = "SELECT * FROM users WHERE id = '".$_SESSION['user']."'";
+$row = $user->details($sql);
+
+$file = UPLOAD.$row['img'];
+if (!is_file($file)) {
+	$profile = UPLOAD.'default.png';
+}
+	$fname    = $row['first_name'];
+}
+
+require_once('header.php');
+?>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">

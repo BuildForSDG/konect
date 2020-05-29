@@ -1,10 +1,29 @@
+<?php
+  //start session
+session_start();
+include_once('./gen/function.php'); 
+if(isset($_SESSION["user"])){
+  header("location: ./home.php");
+}
+logIn();
+?>
 <?php require_once('header.php');?>
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-8"></div>
     <div class="col-md-4">
-      <form action="" method="post">
+
+      <div style="background-color: red; color: white;" align="center">
+        <?php
+          if(isset($_SESSION['message'])){?>
+            <div class="alert alert-info text-center">
+              <?php echo $_SESSION['message']; ?>
+            </div>
+        <?php } ?>
+      </div>
+
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input name="username" type="email" class="form-control" placeholder="Enter email">
@@ -19,7 +38,7 @@
           <input name="check" type="checkbox" class="form-check-input">
           <label class="form-check-label" for="exampleCheck1">Keep me login</label>
         </div>
-        <button type="submit" name="signup" class="btn btn-color">SignUp</button>
+        <button type="submit" name="signInBtn" class="btn btn-color">SignIp</button>
       </form>
     </div>
     
