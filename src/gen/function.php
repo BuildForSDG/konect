@@ -23,6 +23,7 @@ function user(){
 		    }else{
 		    	$gender == 'f';
 		    }
+		    // we need to validate the input
 		    
 		    $info = array(
 		    	"first_name"			=>  $firstName,
