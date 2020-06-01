@@ -28,5 +28,32 @@
   </div>
   </div>
 </footer>
+
+<script src="../inc/js/jquery-2.2.4.min.js"></script>
+  <script src="../inc/js/bootstrap.min.js"></script>
+  <script src="../inc/js/jquery.dataTables.min.js"></script>
+  <script src="../inc/js/dataTables.bootstrap.min.js"></script>
+  <script src="../inc/js/select2.full.min.js"></script>
+  <script src="../inc/js/jquery.inputmask.js"></script>
+  <script src="../inc/js/jquery.inputmask.date.extensions.js"></script>
+  <script src="../inc/js/jquery.inputmask.extensions.js"></script>
+  <script src="../inc/js/moment.min.js"></script>
+  <script src="../inc/js/bootstrap-datepicker.js"></script>
+  <script src="../inc/js/icheck.min.js"></script>
+  <script src="../inc/js/fastclick.js"></script>
+  <script src="../inc/js/jquery.sparkline.min.js"></script>
+  <script src="../inc/js/jquery.slimscroll.min.js"></script>
+  <script src="../inc/js/jquery.fancybox.pack.js"></script>
+  <script src="../inc/js/app.min.js"></script>
+  <script src="ckeditor/ckeditor.js"></script>
+  <script src="../inc/js/demo.js"></script>
+
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $(".select2").select2();
+
+      //Datemask dd/mm/yyyy
+      $("#datemask").inputmask("dd-mm-yyyy", {"placeholder": "
 </body>
 </html>

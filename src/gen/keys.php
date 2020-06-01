@@ -28,4 +28,8 @@ class DBCon{
         return $this->conector;
     }
 }
+$con = new mysqli("localhost", "root", "", "farmKonect");
+if ($con->connect_errno) {
+    echo "Failed to connect (".$con->connect_errno.")".$con->connect_error;
+}
 ?>

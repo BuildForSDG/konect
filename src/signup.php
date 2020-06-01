@@ -1,11 +1,9 @@
 <?php
-//start session
-session_start();
-
+include_once('header.php');
 include_once('./gen/function.php');
 user();
 ?>
-<?php require_once('header.php');?>
+
 
 <div class="container-fluid">
 	<div class="row">
@@ -47,11 +45,11 @@ user();
 		        	<div class="form-group col-md-6">
 		        		<label for="inputGender">Gender</label><br>
 		        		<div class="form-check form-check-inline">
-						  <input class="form-check-input" type="radio" name="sex" value="male" id="inlineRadio1" value="option1">
+						  <input class="form-check-input" type="radio" name="gender" value="m">
 						  <label class="form-check-label" for="inlineRadio1">Male</label>
 						</div>
 						<div class="form-check form-check-inline">
-						  <input class="form-check-input" type="radio" name="sex" value="female" id="inlineRadio2" value="option2">
+						  <input class="form-check-input" type="radio" name="gender" value="f">
 						  <label class="form-check-label" for="inlineRadio2">Female</label>
 						</div>
 		        	</div>
@@ -59,7 +57,7 @@ user();
 		          		<label for="inputState">State <i style="color: red">*</i></label>
 		            		<select name="st" class="form-control">
 		              		<option selected>Choose...</option>
-		              		<option value="kano">...</option>
+		              		<option value="kano">Kano</option>
 		              		<option value="bauchi">Nigeria</option>
 		            		</select>
 		            </div>

@@ -1,6 +1,7 @@
 <?php
 include_once('keys.php');
 function escape($string) {
+    //strip_tags();
         return htmlentities($string, ENT_QUOTES, 'UTF-8');
     }
 
@@ -8,6 +9,7 @@ function escape($string) {
  * this class deals with must of the task to the project -- Model
  */
 class model extends DBCon{
+    public $error_message = '';
 	
 	public function InsertData($table,$fields){
         $db 	= 	"";
@@ -38,6 +40,54 @@ class model extends DBCon{
         }
     }
 
+    public function signin($username, $password){
+        $sql = "SELECT * FROM users WHERE email = '$username' && password = '$password'";
+        $query = $this->conector->query($sql);
+        $res = $query->fetch_array();
+
+        if($query->num_rows > 0){
+            foreach ($res as $key) {
+                return $_SESSION['user'] = $row;
+            }
+            //$row = $query->fetch_array();
+        }else{
+            return false;
+        }
+    }
+public $row_password;
+    public function logg($userid, $pass){
+        $sql = "SELECT * FROM users WHERE email = '$userid'";
+        $query = $this->conector->query($sql);
+
+            if($query->num_rows > 0){
+                foreach($query as $row) { 
+                    $this->row_password = $row['password'];
+                }
+
+                if( $this->row_password != md5($pass) ) {
+                    $this->error_message = 'Password does not match<br>';
+                } else {       
+                    return $_SESSION['user'] = $row;
+                    header("location: ./k.php");
+                }
+            }else{
+                $this->error_message = 'Email Address does not match<br>';
+                //return $error_message;
+            }
+    }
+    /**
+foreach($result as $row) { 
+                $row_password = $row['password'];
+            }
+        
+            if( $row_password != md5($password) ) {
+                $error_message .= 'Password does not match<br>';
+            } else {       
+            
+                $_SESSION['user'] = $row;
+                header("location: index.php");
+            }
+    **/
     public function login($username, $password){
         if (empty($username) && empty($password)) {
             $_SESSION['message'] = 'do type something...';

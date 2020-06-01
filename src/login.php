@@ -1,13 +1,9 @@
 <?php
-  //start session
-session_start();
-include_once('./gen/function.php'); 
-if(isset($_SESSION["user"])){
-  header("location: ./home.php");
-}
-logIn();
+include_once('header.php');
+include_once('./gen/login.php');
+
+
 ?>
-<?php require_once('header.php');?>
 
 <div class="container-fluid">
   <div class="row">
@@ -15,18 +11,17 @@ logIn();
     <div class="col-md-4">
 
       <div style="background-color: red; color: white;" align="center">
-        <?php
-          if(isset($_SESSION['message'])){?>
-            <div class="alert alert-info text-center">
-              <?php echo $_SESSION['message']; ?>
-            </div>
-        <?php } ?>
+      <?php 
+        if( (isset($error_message)) && ($error_message!='') ):
+          echo '<p>'.$error_message.'</p>';
+        endif;
+      ?>
       </div>
 
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input name="username" type="email" class="form-control" placeholder="Enter email">
+          <input name="username" type="text" class="form-control" placeholder="Enter email">
           <small class="form-text">error ...</small>
         </div>
         <div class="form-group">
@@ -38,7 +33,7 @@ logIn();
           <input name="check" type="checkbox" class="form-check-input">
           <label class="form-check-label" for="exampleCheck1">Keep me login</label>
         </div>
-        <button type="submit" name="signInBtn" class="btn btn-color">SignIp</button>
+        <button type="submit" name="logoon" class="btn btn-color">SignIp</button>
       </form>
     </div>
     
@@ -46,9 +41,4 @@ logIn();
 </div>
 
 <?php require_once('footer.php');?>
-                  <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                  </span>
                 
