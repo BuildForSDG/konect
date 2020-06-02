@@ -85,5 +85,3 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 		<div class="col-2"></div>
 	</div>
 </div>
-
-?>

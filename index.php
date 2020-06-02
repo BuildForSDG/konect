@@ -37,7 +37,8 @@ $route->get_post('/prdct-edt/{id}', function($id){
 	if ($id == 2) {
 		define('header', TRUE);
 		require BASE_PATH.'./src/header.php';
-		require BASE_PATH.'./src/gen/engine.class.php';
+
+			require BASE_PATH.'./src/gen/function.php';
 
 			define('edt-prdct', TRUE);
 			require BASE_PATH.'./src/edt-prdct.php';
