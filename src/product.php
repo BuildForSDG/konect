@@ -83,7 +83,7 @@ foreach ($data as $key) {
 						<td><?php echo $status;?></td>
 						<td>										
 							<a href="edt-prdct.php?id=<?php echo $key['id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-							<a href="#" class="btn btn-danger btn-xs" data-href="del-prdct.php?id=<?php echo $key['id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
+							<a href="#" class="btn btn-danger btn-xs" data-href="http://localhost/2020/BuildForSDG/team045/konect-Backend/product/<?php echo $key['id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
 						</td>
                       </tr>
                     </tbody>

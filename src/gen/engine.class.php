@@ -102,31 +102,63 @@ class model extends DBCon{
         }
     }
 
-    public function authId($id)
+    public function authId($table, $id)
     {
-        if(!isset($_REQUEST['id'])) {
+        if(!isset($id)) {
             header('location: logout.php');
             exit;
         } else {
-            // Check the id is valid or not
-            $statement = $pdo->prepare("SELECT * FROM tbl_file WHERE file_id=?");
-            $statement->execute(array($_REQUEST['id']));
-            $total = $statement->rowCount();
-            if( $total == 0 ) {
-                header('location: logout.php');
-                exit;
-            }
+
+            // Check the Requested id is valid or not
+            $sql = "SELECT * FROM ".$table;
+            $sql .= " WHERE id =".$id;
+            $query = $this->conector->query($sql);
+
+        if($query->num_rows == 0){
+            header('location: logout.php');
+            exit;
+        }else{ 
+            return $id;
+        }
         }
     }
 
-    public function details($sql){
+    public function delProduct($id)
+    {
+        // Getting img ID to delete it from folder
 
+        $sql    = "SELECT * FROM `products`";
+        $sql    .= " WHERE id =".$id;
         $query = $this->conector->query($sql);
-        
-        $row = $query->fetch_array();
-            
-        return $row;       
+        while ($row = $query->fetch_array()) {
+			$array[] = $row;
+		}
+        foreach ($array as $row) {
+            $productImg = $row['img_key'];
+        }
+
+        // Unlink the images
+        if($productImg!='') {
+            unlink('./inc/ufl/'.$productImg);	
+            //header('location: ./src/product.php');
+        }
+
+        // Delete from product
+        $sql    = "DELETE FROM `products`";
+        $sql    .= " WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+
+        // Delete Procuct comment
+        $sql    = "DELETE FROM `comments`";
+        $sql    .= " WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+    /**
+        $statement = $this->conector->prepare("DELETE FROM tbl_news WHERE news_id=?");
+        $statement->execute(array($_REQUEST['id']));
+   **/     
+        return true;
     }
+
 
 }
 

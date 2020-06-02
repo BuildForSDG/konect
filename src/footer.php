@@ -54,11 +54,9 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <script src="../inc/js/demo.js"></script>
 
   <script>
-    $(function () {
-      //Initialize Select2 Elements
-      $(".select2").select2();
+    $('#confirm-delete').on('show.bs.modal', function(e) {
+	      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+	  });
 
-      //Datemask dd/mm/yyyy
-      $("#datemask").inputmask("dd-mm-yyyy", {"placeholder": "
-</body>
+    </script>
 </html>
