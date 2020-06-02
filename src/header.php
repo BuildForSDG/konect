@@ -43,7 +43,7 @@ session_start();
 $error_message = '';
 
 // Check if not logged in..
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['farmkonectuser'])) {
   ?>
 
   <nav class="navbar is-fixed-top navbar-expand-lg color">
@@ -95,14 +95,14 @@ if(!isset($_SESSION['user'])) {
 // Current Page Access Level check for all pages
 $cur_page = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 
-if($_SESSION['user']['role']=='Agent') {
+if($_SESSION['farmkonectuser']['role']=='Agent') {
   if( $cur_page == 'user.php' || $cur_page == 'user-add.php' || $cur_page == 'user-edit.php' || $cur_page == 'user-delete.php' ) {
     header('location: board.php');
     exit;
   }
 }
 
-if($_SESSION['user']['role']=='User') {
+if($_SESSION['farmkonectuser']['role']=='User') {
   if( $cur_page != 'board.php' 
       && $cur_page != 'profile-edit.php' 
       && $cur_page != 'comment.php' 
@@ -165,8 +165,8 @@ if($_SESSION['user']['role']=='User') {
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img style="border-radius: 50%; height: 35px; width: 35px;" src="../inc/ufl/<?php if(!$_SESSION['user']['img']){ echo 'default.png'; }else{ echo $_SESSION['user']['img'];} ?>" class="user-image" alt="User Image">
-                  <b> Hi <i><?php echo $_SESSION['user']['first_name'];?></i></b>
+                <img style="border-radius: 50%; height: 35px; width: 35px;" src="../inc/ufl/<?php if(!$_SESSION['farmkonectuser']['img']){ echo 'default.png'; }else{ echo $_SESSION['farmkonectuser']['img'];} ?>" class="user-image" alt="User Image">
+                  <b> Hi <i><?php echo $_SESSION['farmkonectuser']['first_name'];?></i></b>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Dashboard</a>
@@ -197,7 +197,7 @@ if($_SESSION['user']['role']=='User') {
               </li>
 
 
-          <?php if($_SESSION['user']['role'] == 'Admin'): ?>
+          <?php if($_SESSION['farmkonectuser']['role'] == 'Admin'): ?>
               <li class="treeview <?php if( ($cur_page == 'user-add.php')||($cur_page == 'user.php')||($cur_page == 'user-edit.php') ) {echo 'active';} ?>">
                 <a href="user.php">
                   <i class="fa fa-user-plus"></i> <span>User</span>
@@ -206,8 +206,8 @@ if($_SESSION['user']['role']=='User') {
             <?php endif; ?>  
 
             <?php 
-            if($_SESSION['user']['role'] == 'Admin' 
-                || $_SESSION['user']['role'] == 'Agent'):
+            if($_SESSION['farmkonectuser']['role'] == 'Admin' 
+                || $_SESSION['farmkonectuser']['role'] == 'Agent'):
           ?>
               <li class="treeview <?php if( ($cur_page == 'add-prdct.php')||($cur_page == 'product.php')||($cur_page == 'news-edt-prdct.php') ) {echo 'active';} ?>">
                 <a href="product.php">
@@ -221,8 +221,8 @@ if($_SESSION['user']['role']=='User') {
           
 
           <?php 
-            if($_SESSION['user']['role'] == 'Admin' 
-                || $_SESSION['user']['role'] == 'Agent'):
+            if($_SESSION['farmkonectuser']['role'] == 'Admin' 
+                || $_SESSION['farmkonectuser']['role'] == 'Agent'):
           ?>
               <li class="treeview <?php if( ($cur_page == 'comment.php') ) {echo 'active';} ?>">
                 <a href="comment.php">
@@ -242,7 +242,7 @@ if($_SESSION['user']['role']=='User') {
 
           
           <?php 
-            if($_SESSION['user']['role'] == 'Admin'):
+            if($_SESSION['farmkonectuser']['role'] == 'Admin'):
           ?>
               <li class="treeview <?php if( ($cur_page == 'add-advt.php')||($cur_page == 'advt.php')||($cur_page == 'edt-advt.php') ) {echo 'active';} ?>">
                 <a href="advt.php">
@@ -252,8 +252,8 @@ if($_SESSION['user']['role']=='User') {
               <?php endif; ?>
 
           <?php 
-            if($_SESSION['user']['role'] == 'Admin' 
-                || $_SESSION['user']['role'] == 'Agent' || $_SESSION['user']['role'] == 'User'):
+            if($_SESSION['farmkonectuser']['role'] == 'Admin' 
+                || $_SESSION['farmkonectuser']['role'] == 'Agent' || $_SESSION['farmkonectuser']['role'] == 'User'):
           ?>
               <li class="treeview <?php if( ($cur_page == 'notification.php') ) {echo 'active';} ?>">
                 <a href="notification.php">
@@ -263,8 +263,8 @@ if($_SESSION['user']['role']=='User') {
               <?php endif; ?>
 
           <?php 
-            if($_SESSION['user']['role'] == 'Admin' 
-                || $_SESSION['user']['role'] == 'Agent' || $_SESSION['user']['role'] == 'User'):
+            if($_SESSION['farmkonectuser']['role'] == 'Admin' 
+                || $_SESSION['farmkonectuser']['role'] == 'Agent' || $_SESSION['farmkonectuser']['role'] == 'User'):
           ?>
               <li class="treeview <?php if( ($cur_page == 'manage-account.php') ) {echo 'active';} ?>">
                 <a href="manage-account.php">
