@@ -600,7 +600,7 @@ class Route
             count($this->after) && $this->emit($this->after);
         } else if($this->req->method != 'OPTIONS'){
             http_response_code(404);
-            print('<h1>404 Not Found</h1>');
+            print('<h2>404 Not Found.<em>You are caught!</em></h2>');
         }
 
         if (ob_get_length()) {

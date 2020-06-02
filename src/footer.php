@@ -1,3 +1,8 @@
+<?php
+defined('header') or 
+die('<h2>404 Not Found.<em>You are caught!</em></h2>');
+?>
+
 <footer style="flex-shrink: none;" id="sticky-footer" class="navbar iis-fixed-bottom py-4 color">
   <div class="container-fluid">
     <h2>FarmKonect</h2>

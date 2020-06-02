@@ -1,5 +1,7 @@
 <?php
-include_once('header.php');
+define('header', TRUE);
+require_once('header.php');
+
 include_once('./gen/function.php');
 user();
 ?>
@@ -93,4 +95,7 @@ user();
 	</div>
 </div>
 
-<?php require_once('footer.php');?>
+<?php 
+define('footer', TRUE);
+require_once('footer.php');
+?>

@@ -1,9 +1,5 @@
 <?php
 include_once('keys.php');
-function escape($string) {
-    //strip_tags();
-        return htmlentities($string, ENT_QUOTES, 'UTF-8');
-    }
 
 /**
  * this class deals with must of the task to the project -- Model
@@ -40,6 +36,28 @@ class model extends DBCon{
         }
     }
 
+    public function Fetch($table)
+    {
+        $sql = "SELECT * FROM `$table`";
+        $query = $this->conector->query($sql);
+        
+        $row = $query->fetch_array();
+            
+        return $row;  
+    }
+
+    public function product($table)
+    {
+        $sql = "SELECT * FROM ".$table;
+        $sql .= " WHERE status = 1 ";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+			$array[] = $row;
+		}
+		return $array;
+    }
+
     public function signin($username, $password){
         $sql = "SELECT * FROM users WHERE email = '$username' && password = '$password'";
         $query = $this->conector->query($sql);
@@ -54,7 +72,7 @@ class model extends DBCon{
             return false;
         }
     }
-public $row_password;
+
     public function logg($userid, $pass){
         $sql = "SELECT * FROM users WHERE email = '$userid'";
         $query = $this->conector->query($sql);
@@ -75,19 +93,7 @@ public $row_password;
                 //return $error_message;
             }
     }
-    /**
-foreach($result as $row) { 
-                $row_password = $row['password'];
-            }
-        
-            if( $row_password != md5($password) ) {
-                $error_message .= 'Password does not match<br>';
-            } else {       
-            
-                $_SESSION['user'] = $row;
-                header("location: index.php");
-            }
-    **/
+
     public function login($username, $password){
         if (empty($username) && empty($password)) {
             $_SESSION['message'] = 'do type something...';
@@ -114,32 +120,7 @@ foreach($result as $row) {
             
         return $row;       
     }
-/**
-    public function login(){
-        if (isset($_POST['mm'])) {
-            $email = '';
-            $ps = '';
-            if (empty($email)) {
-                array_push($errors, 'Wrong email.')
-            }
-            if (empty($ps)) {
-                array_push($errors, 'Wrong password.')
-            }
-            if (count($errors == 0)) {
-                $pass = md5($ps);
-                $query = "SELECT table FROM user = '$email', && password = '$ps' ";
-                $rslt = mysqli_query($con, $query);
-                if (mysqli_num($rslt)) {
-                    $_SESSION['username'] = $email;
-                    $_SESSION['password'] = $ps;
-                    header('Location: home');
-                }else{
-                    array_push($errors, 'wrong username/email combination please try again.')
-                }
-            }
-        }
-    }
-    **/
+
 }
 
 

@@ -1,5 +1,7 @@
 <?php
-include_once('header.php');
+define('header', TRUE);
+require_once('header.php');
+
 include_once('./gen/login.php');
 
 
@@ -40,5 +42,8 @@ include_once('./gen/login.php');
   </div>
 </div>
 
-<?php require_once('footer.php');?>
+<?php 
+define('footer', TRUE);
+require_once('footer.php');
+?>
                 

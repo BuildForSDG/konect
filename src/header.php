@@ -1,7 +1,11 @@
+<?php
+defined('header') or 
+die('<h2>404 Not Found.<em>You are caught!</em></h2>');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>FarmKonect | </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -14,7 +18,7 @@
   <script src="../inc/dist/js/jquery.slim.js"></script>
 
   <link rel="stylesheet" href="../inc/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../inc/dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="../inc/dist/css/main.css">
   <link rel="stylesheet" href="../inc/dist/fontawesome/css/all.css">
   <link rel="stylesheet" href="../inc/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../inc/dist/css/_all-skins.min.css">
@@ -161,7 +165,7 @@ if($_SESSION['user']['role']=='User') {
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img style="border-radius: 50%; height: 35px; width: 35px;" src="../inc/uploads/<?php echo $_SESSION['user']['img']; ?>" class="user-image" alt="User Image">
+                <img style="border-radius: 50%; height: 35px; width: 35px;" src="../inc/ufl/<?php if(!$_SESSION['user']['img']){ echo 'default.png'; }else{ echo $_SESSION['user']['img'];} ?>" class="user-image" alt="User Image">
                   <b> Hi <i><?php echo $_SESSION['user']['first_name'];?></i></b>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

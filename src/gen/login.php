@@ -4,8 +4,8 @@ include_once('keys.php');
 
 	if(isset($_POST['logoon'])) {
 
-		$userid 	= $_POST['username'];
-		$pass 		= $_POST['password'];
+		$userid 	= escape($_POST['username']);
+		$pass 		= escape($_POST['password']);
 	        
 	    if(empty($userid) || empty($pass)) {
 	        $error_message = 'Email and/or Password can not be empty<br>';
@@ -23,7 +23,7 @@ include_once('keys.php');
 	                    $error_message = 'Password does not match<br>';
 	                } else { 
 	                //echo "you're good to go";      
-	                    $_SESSION['user'] = $row;
+						$_SESSION['farmkonectuser'] = $row;
 	                    header("location: ./board.php");
 	                }
 	            }else{
@@ -32,35 +32,4 @@ include_once('keys.php');
 	            }
 		}
 	}
-
-/**
- * 
- *
-class kin
-{
-	public $king;
-
-	public function k($abuya)
-	{
-		if ($abuya == 'kebbi') {
-			$this->king = 'maza';
-			return $this->king;
-		}else{
-			return 'kanawa';
-		}
-
-		if ($abuya == 'kir') {
-			return 'kiri';
-		}else{
-			return 'baddi';
-		}
-
-	}
-}
-
-$ko = new kin();
-
-$j = $ko->k('kekbbi');
-echo $j;
-**/
 ?>

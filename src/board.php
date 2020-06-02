@@ -1,4 +1,5 @@
 <?php
+define('header', TRUE);
 require_once('header.php');
 ?>
 <?php 
@@ -211,4 +212,7 @@ $total_subscriber = $statement->rowCount();
 </div>
 
 
-<?php include_once('footer.php'); ?>
+<?php 
+define('footer', TRUE);
+include_once('footer.php'); 
+?>

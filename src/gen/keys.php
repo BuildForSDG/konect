@@ -1,6 +1,8 @@
 <?php
-define("URL", "http://localhost/2020/BuildForSDG/team045/konect-Backend/");
-define("UPLOAD", URL."inc/ufl/");
+function escape($string) {
+    //strip_tags();
+        return htmlentities($string, ENT_QUOTES, 'UTF-8');
+    }
 /**
  * this class deals with our datatbase configuration
  */
