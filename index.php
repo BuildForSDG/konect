@@ -30,22 +30,28 @@ $route->any('/product/{id}', function($id){
 		if ($sucess) {
 			header('Location: ../src/product.php');
 		}
+	}else{
+		header('location: ../src/logout.php');
 	}
 });
 
 $route->get_post('/prdct-edt/{id}', function($id){
-	if ($id == 2) {
-		define('header', TRUE);
-		require BASE_PATH.'./src/header.php';
-
+	
+	define('header', TRUE);
+	require BASE_PATH.'./src/header.php';
+		$product = new model();
+		$authID = $product->authId('products', $id);
+		if ($authID) {
 			require BASE_PATH.'./src/gen/function.php';
 
 			define('edt-prdct', TRUE);
 			require BASE_PATH.'./src/edt-prdct.php';
+		}else{
+			header('location: ../src/logout.php');
+		}
 
-		define('footer', TRUE);
-		require BASE_PATH.'./src/footer.php';
-	}
+	define('footer', TRUE);
+	require BASE_PATH.'./src/footer.php';
 	
 });
 

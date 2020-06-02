@@ -48,6 +48,18 @@ class model extends DBCon{
 		return $array;
     }
 
+    public function productById($id)
+    {
+        $sql = "SELECT * FROM `products`";
+        $sql .= " WHERE id = ".$id;
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+			$array[] = $row;
+		}
+		return $array;
+    }
+
     public function signin($username, $password){
         $sql = "SELECT * FROM users WHERE email = '$username' && password = '$password'";
         $query = $this->conector->query($sql);
@@ -105,21 +117,21 @@ class model extends DBCon{
     public function authId($table, $id)
     {
         if(!isset($id)) {
-            header('location: logout.php');
-            exit;
+            return header('location: logout.php');
         } else {
 
-            // Check the Requested id is valid or not
-            $sql = "SELECT * FROM ".$table;
-            $sql .= " WHERE id =".$id;
-            $query = $this->conector->query($sql);
-
-        if($query->num_rows == 0){
-            header('location: logout.php');
-            exit;
-        }else{ 
-            return $id;
-        }
+        // Check the Requested id is valid or not
+        $sql = "SELECT * FROM ".$table;
+        $sql .= " WHERE id = ".$id;
+        $array = array();
+        $query = $this->conector->query($sql);
+            while ($row = $query->fetch_array()) {
+                $array[] = $row;
+            }
+            foreach ($array as $row) {
+                $id = $row['id'];
+                return $id;
+            }
         }
     }
 
@@ -152,10 +164,40 @@ class model extends DBCon{
         $sql    = "DELETE FROM `comments`";
         $sql    .= " WHERE id =".$id;
         $query  = $this->conector->query($sql);
-    /**
-        $statement = $this->conector->prepare("DELETE FROM tbl_news WHERE news_id=?");
-        $statement->execute(array($_REQUEST['id']));
-   **/     
+
+        return true;
+    }
+
+    public function editProduct($id)
+    {
+        // Getting product name
+
+        $sql    = "SELECT * FROM `products`";
+        $sql    .= " WHERE id =".$id;
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+			$array[] = $row;
+		}
+        foreach ($array as $row) {
+            $productImg = $row['name'];
+        }
+
+        // Unlink the images
+        if($productImg!='') {
+            unlink('./inc/ufl/'.$productImg);	
+            //header('location: ./src/product.php');
+        }
+
+        // Delete from product
+        $sql    = "DELETE FROM `products`";
+        $sql    .= " WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+
+        // Delete Procuct comment
+        $sql    = "DELETE FROM `comments`";
+        $sql    .= " WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+
         return true;
     }
 
