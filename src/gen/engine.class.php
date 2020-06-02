@@ -36,16 +36,6 @@ class model extends DBCon{
         }
     }
 
-    public function Fetch($table)
-    {
-        $sql = "SELECT * FROM `$table`";
-        $query = $this->conector->query($sql);
-        
-        $row = $query->fetch_array();
-            
-        return $row;  
-    }
-
     public function product($table)
     {
         $sql = "SELECT * FROM ".$table;
@@ -109,6 +99,23 @@ class model extends DBCon{
         }
         else{
             return false;
+        }
+    }
+
+    public function authId($id)
+    {
+        if(!isset($_REQUEST['id'])) {
+            header('location: logout.php');
+            exit;
+        } else {
+            // Check the id is valid or not
+            $statement = $pdo->prepare("SELECT * FROM tbl_file WHERE file_id=?");
+            $statement->execute(array($_REQUEST['id']));
+            $total = $statement->rowCount();
+            if( $total == 0 ) {
+                header('location: logout.php');
+                exit;
+            }
         }
     }
 
