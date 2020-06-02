@@ -13,10 +13,10 @@ user();
 		<div class="col-md-4">
 			<div style="background-color: red; color: white;" align="center">
             <?php
-                if(isset($_SESSION['message'])){
+                if(isset($_SESSION['farmkonectmessage'])){
                     ?>
                     <div class="alert alert-info text-center">
-                    <?php echo $_SESSION['message']; ?>
+                    <?php echo $_SESSION['farmkonectmessage']; ?>
                     </div>
                     <?php
                 }
@@ -80,13 +80,13 @@ user();
 		    </form>
 		    <div style="background-color: red; color: white;" align="center">
             <?php
-                if(isset($_SESSION['message'])){
+                if(isset($_SESSION['farmkonectmessage'])){
                     ?>
                     <div class="alert alert-info text-center">
-                    <?php echo $_SESSION['message']; ?>
+                    <?php echo $_SESSION['farmkonectmessage']; ?>
                     </div>
                     <?php
-                    unset($_SESSION['message']);
+                    unset($_SESSION['farmkonectmessage']);
                 }
             ?>
         	</div>

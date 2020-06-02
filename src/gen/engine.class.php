@@ -96,8 +96,8 @@ class model extends DBCon{
 
     public function login($username, $password){
         if (empty($username) && empty($password)) {
-            $_SESSION['message'] = 'do type something...';
-            return $_SESSION['message'];
+            $_SESSION['farmkonectmessage'] = 'do type something...';
+            return $_SESSION['farmkonectmessage'];
         }
 
         $sql = "SELECT * FROM users WHERE email = '$username' AND password = '$password'";
