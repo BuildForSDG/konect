@@ -33,11 +33,17 @@ $route->any('/product/{id}', function($id){
 	}
 });
 
-$route->get_post('/productEdit', function(){
-	
+$route->get_post('/prdct-edt/{id}', function($id){
+	if ($id == 2) {
+		define('header', TRUE);
 		require BASE_PATH.'./src/header.php';
-			echo 'this is product edit..';
+
+			define('edt-prdct', TRUE);
+			require BASE_PATH.'./src/edt-prdct.php';
+
+		define('footer', TRUE);
 		require BASE_PATH.'./src/footer.php';
+	}
 	
 });
 
