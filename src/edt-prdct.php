@@ -95,7 +95,7 @@ $error_message = '';
                         
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea name="desc" value="<?php echo $description?>" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $description?></textarea>
                         </div>
                         
                         <div class="form-group">
