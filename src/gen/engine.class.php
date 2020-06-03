@@ -21,6 +21,23 @@ class model extends DBCon{
         }
 
     }
+    
+    public function UpdateProduct($name, $id){
+        // Getting img ID to delete it from folder
+
+        $sql    = "";
+        $sql    .= "UPDATE products SET ";
+        $sql    .= "name=".$name;
+        $sql    .= " WHERE id =".$id;
+        $query = $this->conector->query($sql);
+        
+        if ($query) {
+            return true;
+        }else{
+            false;
+        }
+
+    }
 
     public function authEmail($table,$input){
 

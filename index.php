@@ -56,7 +56,41 @@ $route->get_post('/prdct-edt/{id}', function($id){
 });
 
 $route->any('/kin', function(){
-	echo "hii maza";
+	//echo "hii maza";
+	$fields = array(
+		'Name'	=> 'Aminu',
+		'Email'	=> 'aminu@gmail.com',
+		'Phone'	=> '080899575767',
+		'Town'	=> 'Bulangu'
+	);
+
+		echo '<br><br>Hi<br><br>';
+
+		$db 	= 	"";
+		$db 	.= 	"UPDATE products SET ";
+		//$key 	= 	implode(",", array_keys($fields));
+		//$value 	=	implode("=", array_values($fields));
+/**
+ * it works
+ * 	$value 	=	(implode(" ", array_values($fields));
+ * $key 	= 	array( implode("=".$val.',', array_keys($fields)) );
+ * foreach ($key as $keys) {
+ * echo $db.$keys;
+ * 	}
+ */
+		
+		$value 	=	array ( implode("=", array_values($fields)) );
+		
+		for ($value=0; $value < 1; $value++) { 
+			$val = $value;
+			
+			$key 	= 	array( implode("=".$val.',', array_keys($fields)) );
+
+			foreach ($key as $keys) {
+				echo $db.$keys;
+			}
+		}
+
 });
 
 $route->get(['/', 'index', 'home'], function(){

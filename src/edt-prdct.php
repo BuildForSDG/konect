@@ -107,19 +107,21 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 </div>
 <?php
 if (isset($_POST['prd_update_btn'])){ 
-    if (empty($_POST['owner']) || empty($_POST['phone']) || empty($_POST['name']) || empty($_POST['price']) || empty($_POST['location']) || empty($_POST['description'])) {
+    //empty($_POST['owner']) || empty($_POST['phone']) || empty($_POST['name']) || empty($_POST['price']) || empty($_POST['location']) || empty($_POST['description'])) {
+        
+    if (empty($_POST['name'])) {
             $_SESSION['farmkonectmessage'] = "All fields with <b style='color: red;'>*</b> is required!";
     }else{
 
-        $InsOwner 	= 	escape($_POST['owner']);
-        $InsPhone 	= 	escape($_POST['phone']);
+        $InsOwner 	    = 	escape($_POST['owner']);
+        $InsPhone 	    = 	escape($_POST['phone']);
         $InsName 		= 	escape($_POST['name']);
-        $InsDescription 	= 	escape($_POST['description']);
+        $InsDescription = 	escape($_POST['description']);
         //$InsImg 		= 	escape($_POST['img_key']);
-        $InsPrice 	=	escape($_POST['price']);	
-        $InsLocation		=	escape($_POST['location']);
-        $role		=	'User';
-        $pass 		= 	md5($password);
+        $InsPrice 	    =	escape($_POST['price']);	
+        $InsLocation	=	escape($_POST['location']);
+        $role		    =	'User';
+        $pass 		    = 	md5($password);
                 // we need to validate the input
         
         $info = array(
