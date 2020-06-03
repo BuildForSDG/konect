@@ -44,7 +44,7 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
                     </p>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <form method="post" action="">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputproductname">Owner name <i style="color: red">*</i></label>
@@ -113,17 +113,17 @@ if (isset($_POST['prd_update_btn'])){
             $_SESSION['farmkonectmessage'] = "All fields with <b style='color: red;'>*</b> is required!";
     }else{
 
-        $InsOwner 	    = 	escape($_POST['owner']);
-        $InsPhone 	    = 	escape($_POST['phone']);
+       // $InsOwner 	    = 	escape($_POST['owner']);
+        //$InsPhone 	    = 	escape($_POST['phone']);
         $InsName 		= 	escape($_POST['name']);
-        $InsDescription = 	escape($_POST['description']);
+        //$InsDescription = 	escape($_POST['description']);
         //$InsImg 		= 	escape($_POST['img_key']);
-        $InsPrice 	    =	escape($_POST['price']);	
-        $InsLocation	=	escape($_POST['location']);
-        $role		    =	'User';
-        $pass 		    = 	md5($password);
+        //$InsPrice 	    =	escape($_POST['price']);	
+        //$InsLocation	=	escape($_POST['location']);
+        //$role		    =	'User';
+        //$pass 		    = 	md5($password);
                 // we need to validate the input
-        
+        /**
         $info = array(
             "owner"         =>  InsOwner,
             "phone"         =>  InsPhone,
@@ -133,8 +133,9 @@ if (isset($_POST['prd_update_btn'])){
             "price"         =>  InsPrice,
             "location"      =>  InsLocation
         );
+        **/
 
-        $data = $prdct->InsertData("users", $info);
+        $data = $prdct->UpdateProduct($InsName, $id);
         if (!$data) {
             $_SESSION['farmkonectmessage'] = "Please check your login details and try again later.";
         }else{
