@@ -2,7 +2,7 @@
 defined('edt-prdct') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 date_default_timezone_set('Africa/Lagos');
-
+$error_message = '';
 ?>
 <?php
     $prdct = new model();
@@ -36,12 +36,19 @@ date_default_timezone_set('Africa/Lagos');
 					    <a href="product.php" class="btn color btn-sm">All Product</a>
 				    </div>
                     <h4 class="card-title">Add New Product</h4>
-                    <p class="category">  
-                        <?php if(isset($_SESSION['farmkonectmessage'])){ ?>
-                        <div class="alert alert-info text-center">
-                            <?php echo $_SESSION['farmkonectmessage']; ?>
-                        </div>
-                            <?php unset($_SESSION['farmkonectmessage']); }?>
+                    <p class="category"> 
+                    <div class="alert color text-center">
+                        <?php
+                            if(isset($_SESSION['farmkonectmessage'])){
+                                ?>
+                                <div class="alert alert-info text-center">
+                                <?php echo $_SESSION['farmkonectmessage']; ?>
+                                </div>
+                                <?php
+                                unset($_SESSION['farmkonectmessage']);
+                            }
+                        ?>
+                    </div>
                     </p>
                 </div>
                 <div class="card-body">
@@ -124,62 +131,10 @@ if (isset($_POST['prd_update_btn'])){
     
     $upd = $prdct->update('products', $id, $array);
     if (!$upd) {
-        echo "<h1>error</h1>";
+        $_SESSION['farmkonectmessage'] = " Having some certain error, check your input ";
     }else{
-        echo "<h1>sucessfully updated..</h1>";
+        $_SESSION['farmkonectmessage'] = " Sucessfully updated.. ";
+        header('location: ../src/product.php');
     }
 }
-?>
-<?php
-    /**
-     * //empty($_POST['owner']) || empty($_POST['phone']) || empty($_POST['name']) || empty($_POST['price']) || empty($_POST['location']) || empty($_POST['description'])) {
-        
-    if (empty($_POST['name'])) {
-            $_SESSION['farmkonectmessage'] = "All fields with <b style='color: red;'>*</b> is required!";
-    }else{
-
-       // $InsOwner 	    = 	escape($_POST['owner']);
-        //$InsPhone 	    = 	escape($_POST['phone']);
-        $InsName 		= 	escape($_POST['name']);
-        //$InsDescription = 	escape($_POST['description']);
-        //$InsImg 		= 	escape($_POST['img_key']);
-        //$InsPrice 	    =	escape($_POST['price']);	
-        //$InsLocation	=	escape($_POST['location']);
-        //$role		    =	'User';
-        //$pass 		    = 	md5($password);
-                // we need to validate the input
-        /**
-        $info = array(
-            "owner"         =>  InsOwner,
-            "phone"         =>  InsPhone,
-            "name"          =>  InsName,
-            "description"   =>  InsDescription,
-            //"img_key"       =>  InsPrice,
-            "price"         =>  InsPrice,
-            "location"      =>  InsLocation
-        );
-
-        $data = $prdct->UpdateProduct($InsName, $id);
-        if (!$data) {
-            $_SESSION['farmkonectmessage'] = "Please check your login details and try again later.";
-        }else{
-         //we can verify user by email.......
-         $_SESSION['farmkonectmessage'] = "Successfully";
-        }
-
-        if ($info['email'] == $user->authEmail("users", $info['email'])) {
-               $_SESSION['message'] = "this email already been use";
-           }else{
-             $data = $user->InsertData("users", $info);
-            if (!$data) {
-                $_SESSION['message'] = "Please check your login details and try again later.";
-            }else{
-             //we can verify user by email.......
-            $_SESSION['message'] = "Successfully";
-            }
-        }
-        
-    }
-}
-**/
 ?>
