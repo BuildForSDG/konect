@@ -1,6 +1,7 @@
 <?php
 defined('edt-prdct') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
+date_default_timezone_set('Africa/Lagos');
 
 ?>
 <?php
@@ -107,7 +108,31 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 </div>
 <?php
 if (isset($_POST['prd_update_btn'])){ 
-    //empty($_POST['owner']) || empty($_POST['phone']) || empty($_POST['name']) || empty($_POST['price']) || empty($_POST['location']) || empty($_POST['description'])) {
+    $authID = $prdct->authId('products', $id);
+    $id = array('id' => $authID);
+    $date = new DateTime();
+    $currentTime = $date->format('Y-m-d H:i:s');
+    $array = array(
+        'owner' 	    => 	escape($_POST['owner']),
+        'phone' 	    => 	escape($_POST['phone']),
+        'name' 		    => 	escape($_POST['title']),
+        'description'   => 	escape($_POST['desc']),
+        'price' 	    =>	escape($_POST['price']),	
+        'location'	    =>	escape($_POST['location']),
+        'created_at'    =>	$currentTime
+    );
+    
+    $upd = $prdct->update('products', $id, $array);
+    if (!$upd) {
+        echo "<h1>error</h1>";
+    }else{
+        echo "<h1>sucessfully updated..</h1>";
+    }
+}
+?>
+<?php
+    /**
+     * //empty($_POST['owner']) || empty($_POST['phone']) || empty($_POST['name']) || empty($_POST['price']) || empty($_POST['location']) || empty($_POST['description'])) {
         
     if (empty($_POST['name'])) {
             $_SESSION['farmkonectmessage'] = "All fields with <b style='color: red;'>*</b> is required!";
@@ -133,7 +158,6 @@ if (isset($_POST['prd_update_btn'])){
             "price"         =>  InsPrice,
             "location"      =>  InsLocation
         );
-        **/
 
         $data = $prdct->UpdateProduct($InsName, $id);
         if (!$data) {
@@ -142,7 +166,7 @@ if (isset($_POST['prd_update_btn'])){
          //we can verify user by email.......
          $_SESSION['farmkonectmessage'] = "Successfully";
         }
-        /**
+
         if ($info['email'] == $user->authEmail("users", $info['email'])) {
                $_SESSION['message'] = "this email already been use";
            }else{
@@ -154,8 +178,8 @@ if (isset($_POST['prd_update_btn'])){
             $_SESSION['message'] = "Successfully";
             }
         }
-        **/
+        
     }
 }
-
+**/
 ?>

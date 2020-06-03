@@ -6,7 +6,30 @@ include_once('keys.php');
  */
 class model extends DBCon{
     public $error_message = '';
-	
+    
+    public function update($table, $fields, $id)
+	{
+		$sql = "";
+		$codition = "";
+		foreach ($id as $key => $value) {
+			$codition .= $key. "='".$value."' , ";
+		}
+		$codition = substr($codition, 0, -5);
+		foreach ($fields as $key => $value) {
+			// Update table SET name='' , qlt ='' where id = ''	
+			$sql .= $key ."='".$value."', ";	
+		}
+
+		$sql = substr($sql, 0, -2);
+		$sql = "UPDATE ".$table." SET ".$codition."' WHERE ".$sql;
+		//echo $sql;
+		$query 	= 	$this->conector->query($sql);
+
+        if ($query) {
+            return true;
+        }
+    }
+    
 	public function InsertData($table,$fields){
         $db 	= 	"";
         $db 	.= 	"INSERT INTO ".$table;
