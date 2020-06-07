@@ -33,6 +33,12 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   </div>
   </div>
 </footer>
+<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- BACK TO TOP                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="backTop" class="back-top is-hidden-sm-down">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
 
 <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery-2.2.4.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/js/bootstrap.min.js"></script>
@@ -50,9 +56,13 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.slimscroll.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.fancybox.pack.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/js/app.min.js"></script>
-  <script src="ckeditor/ckeditor.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/js/demo.js"></script>
+   <!-- sefecial -->
+ <script type="text/javascript" src="<?php echo FARMWEB_URL; ?>inc/js/owl.carousel.min.js"></script>
 
+  <script type="text/javascript" src="<?php echo FARMWEB_URL; ?>inc/js/jquery.flexslider-min.js"></script>
+
+  <script type="text/javascript" src="<?php echo FARMWEB_URL; ?>inc/js/main.js"></script>
   <script>
     $('#confirm-delete').on('show.bs.modal', function(e) {
 	      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
@@ -64,4 +74,6 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
       });
     });
     </script>
+
+   
 </html>

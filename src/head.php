@@ -16,24 +16,20 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/all.css">
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/jquery.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/bootstrap.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/jquery.slim.js"></script>
 
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/_all-skins.min.css">
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/style.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/style.css">
 
   <link rel="icon" href="<?php echo FARMWEB_URL; ?>inc/img/logo.ico">
-  
+
   <!-- Owl Carousel -->
   <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-  <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/owl-carousel/owl.theme.min.css" rel="stylesheet">
 
   <!-- Flex Slider -->
   <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/flexslider/flexslider.css" rel="stylesheet">

@@ -22,7 +22,6 @@ $error_message = '';
         $location 		= $key['location'];
         $status 		= $key['status'];
 
-echo $description;
 ?>
  <main id="mainContent" class="main-content">
             <!-- Page Container -->
@@ -37,50 +36,50 @@ echo $description;
                                             <div id="product_slider" class="flexslider">
                                                 <ul class="slides">
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_01.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_01.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_02.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_02.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_03.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_03.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_04.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_04.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_05.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_05.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/product_06.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/product_06.jpg">
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div id="product_slider_nav" class="flexslider flexslider-nav">
                                                 <ul class="slides">
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_01.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_01.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_02.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_02.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_03.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_03.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_04.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_04.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_05.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_05.jpg">
                                                     </li>
                                                     <li>
-                                                        <img alt="" src="wp_content/assets/images/products/thumb_06.jpg">
+                                                        <img alt="" src="<?php echo FARMWEB_URL; ?>inc/img/thumb_06.jpg">
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="deal-body p-20">
-                                            <h3 class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo mollitia autem, animi fuga.</h3>
+                                            <h3 class="mb-10"><?php echo $name; ?>.</h3>
                                             <div class="rating mb-10">
                                                 <span class="rating-stars" data-rating="3">
 				                        <i class="fa fa-star-o"></i>
@@ -90,20 +89,18 @@ echo $description;
 				                        <i class="fa fa-star-o"></i>
 				                    </span>
                                             </div>
-                                            <h2 class="price mb-15">$60.00</h2>
-                                            <p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ipsum voluptatum. Eos, saepe harum culpa consequatur aut tenetur, earum, illum eum iste aliquam quam quisquam atque numquam magni voluptas deserunt!</p>
-                                            <p class="mb-15">Adipisicing elit. Laboriosam, ipsum voluptatum. Eos, saepe harum culpa consequatur aut tenetur, earum, illum eum iste aliquam quam quisquam atque numquam magni voluptas deserunt!</p>
-                                            <p class="mb-20">Laboriosam, ipsum voluptatum. Eos, saepe harum culpa consequatur aut tenetur, earum, illum eum iste aliquam quam quisquam atque numquam magni voluptas deserunt!</p>
+                                            <h2 class="price mb-15"><?php echo $price; ?></h2>
+                                            <p class="mb-15"><?php echo $description; ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="posted-review panel p-30">
-                                        <h3 class="h-title">16 Review</h3>
+                                        <h3 class="h-title">16 Comment</h3>
                                         <div class="review-single pt-30">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object mr-10 radius-4" src="wp_content/assets/images/avatars/avatar_01.jpg" width="90" alt="">
+                                                    <img class="media-object mr-10 radius-4" src="<?php echo FARMWEB_URL; ?>inc/img/default.png" width="90" alt="">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="review-wrapper clearfix">
@@ -132,7 +129,7 @@ echo $description;
                                         <div class="review-single pt-30">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object mr-10 radius-4" src="wp_content/assets/images/avatars/avatar_02.jpg" width="90" alt="">
+                                                    <img class="media-object mr-10 radius-4" src="<?php echo FARMWEB_URL; ?>inc/img/default.png" width="90" alt="">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="review-wrapper clearfix">
@@ -161,7 +158,7 @@ echo $description;
                                         <div class="review-single pt-30">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object mr-10 radius-4" src="wp_content/assets/images/avatars/avatar_03.jpg" width="90" alt="">
+                                                    <img class="media-object mr-10 radius-4" src="<?php echo FARMWEB_URL; ?>inc/img/default.png" width="90" alt="">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="review-wrapper clearfix">
@@ -190,7 +187,7 @@ echo $description;
                                         <div class="review-single pt-30">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object mr-10 radius-4" src="wp_content/assets/images/avatars/avatar_04.jpg" width="90" alt="">
+                                                    <img class="media-object mr-10 radius-4" src="<?php echo FARMWEB_URL; ?>inc/img/default.png" width="90" alt="">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="review-wrapper clearfix">
@@ -219,7 +216,7 @@ echo $description;
                                         <div class="review-single pt-30">
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <img class="media-object mr-10 radius-4" src="wp_content/assets/images/avatars/avatar_05.jpg" width="90" alt="">
+                                                    <img class="media-object mr-10 radius-4" src="<?php echo FARMWEB_URL; ?>inc/img/default.png" width="90" alt="">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="review-wrapper clearfix">
@@ -441,7 +438,7 @@ echo $description;
                                             <div class="widget-body ptb-20">
                                                 <div class="owl-slider" data-loop="true" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="1000" data-nav-speed="false" data-nav="true" data-xxs-items="1" data-xxs-nav="true" data-xs-items="1" data-xs-nav="true" data-sm-items="1" data-sm-nav="true" data-md-items="1" data-md-nav="true" data-lg-items="1" data-lg-nav="true">
                                                     <div class="latest-deals__item item">
-                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="wp_content/assets/images/deals/deal_02.jpg">
+                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/deal_02.jpg">
                                                             <div class="label-discount top-10 right-10">-30%</div>
                                                             <ul class="deal-actions top-10 left-10">
                                                                 <li class="like-deal">
@@ -484,7 +481,7 @@ echo $description;
                                                         </figure>
                                                     </div>
                                                     <div class="latest-deals__item item">
-                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="wp_content/assets/images/deals/deal_03.jpg">
+                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/deal_03.jpg">
                                                             <div class="label-discount top-10 right-10">-15%</div>
                                                             <ul class="deal-actions top-10 left-10">
                                                                 <li class="like-deal">
@@ -527,7 +524,7 @@ echo $description;
                                                         </figure>
                                                     </div>
                                                     <div class="latest-deals__item item">
-                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="wp_content/assets/images/deals/deal_04.jpg">
+                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/deal_04.jpg">
                                                             <div class="label-discount top-10 right-10">-60%</div>
                                                             <ul class="deal-actions top-10 left-10">
                                                                 <li class="like-deal">
@@ -570,7 +567,7 @@ echo $description;
                                                         </figure>
                                                     </div>
                                                     <div class="latest-deals__item item">
-                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="wp_content/assets/images/deals/deal_05.jpg">
+                                                        <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/deal_05.jpg">
                                                             <div class="label-discount top-10 right-10">-60%</div>
                                                             <ul class="deal-actions top-10 left-10">
                                                                 <li class="like-deal">
@@ -627,7 +624,7 @@ echo $description;
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="wp_content/assets/images/deals/thumb_01.jpg" alt="Thumb" width="80">
+                                                            <img class="media-object" src="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/thumb_01.jpg" alt="Thumb" width="80">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -653,7 +650,7 @@ echo $description;
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="wp_content/assets/images/deals/thumb_02.jpg" alt="Thumb" width="80">
+                                                            <img class="media-object" src="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/thumb_02.jpg" alt="Thumb" width="80">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -679,7 +676,7 @@ echo $description;
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="wp_content/assets/images/deals/thumb_03.jpg" alt="Thumb" width="80">
+                                                            <img class="media-object" src="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/thumb_03.jpg" alt="Thumb" width="80">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -705,7 +702,7 @@ echo $description;
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="wp_content/assets/images/deals/thumb_04.jpg" alt="Thumb" width="80">
+                                                            <img class="media-object" src="<?php echo FARMWEB_URL; ?>inc/img/default.png/assets/images/deals/thumb_04.jpg" alt="Thumb" width="80">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
