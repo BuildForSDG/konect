@@ -1,5 +1,5 @@
 <?php
-defined('header') or 
+defined('footer') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 ?>
 
