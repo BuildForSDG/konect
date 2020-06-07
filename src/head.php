@@ -9,6 +9,10 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <title>FarmKonect | </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FarmKonect its a platform for the local farmers, to help them sell theier product in ease">
+  <meta name="farmers, local farmers, buying farm product, farm product, nigeria, sell farm product, farm, land,">
+  <meta name="robots" content="index, home">
+  <meta name="author" content="Team-045 BuildforSDG">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
@@ -24,6 +28,20 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/_all-skins.min.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/style.css">
+
+  <link rel="icon" href="<?php echo FARMWEB_URL; ?>inc/img/logo.ico">
+  
+  <!-- Owl Carousel -->
+  <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/owl-carousel/owl.theme.min.css" rel="stylesheet">
+
+  <!-- Flex Slider -->
+  <link href="<?php echo FARMWEB_URL; ?>inc/assets/vendors/flexslider/flexslider.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="<?php echo FARMWEB_URL; ?>inc/assets/css/base.css" rel="stylesheet">
+  <link href="<?php echo FARMWEB_URL; ?>inc/assets/css/style.css" rel="stylesheet">
+
   <style type="text/css">
     textarea{
       resize: none;

@@ -60,12 +60,21 @@ $route->any('/product', function(){
 	require BASE_PATH.'./src/footer.php';
 });
 
-$route->any('/productv/v/', function(){
-	define('header', TRUE);
-	require BASE_PATH.'./src/header.php';
+$route->any('/productv/v/{id}', function($id){
+	define('head', TRUE);
+	require BASE_PATH.'./src/head.php';
 
-	define('productvv', TRUE);
+		$product = new model();
+		$authID = $product->authId('products', $id);
+		if ($authID) {
+
+			define('productvv', TRUE);
 			require BASE_PATH.'./src/productv.php';
+			
+			
+		}else{
+			header('location: ../src/logout.php');
+		}
 
 	define('footer', TRUE);
 	require BASE_PATH.'./src/footer.php';
