@@ -1,5 +1,5 @@
 <?php
-defined('head-board') or 
+defined('head') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 ?>
 
@@ -10,20 +10,20 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../inc/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../inc/dist/css/main.css">
-  <link rel="stylesheet" href="../inc/dist/fontawesome/css/all.css">
-  <script src="../inc/dist/js/jquery.min.js"></script>
-  <script src="../inc/dist/js/bootstrap.min.js"></script>
-  <script src="../inc/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../inc/dist/js/jquery.slim.js"></script>
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
+  <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/jquery.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/bootstrap.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/jquery.slim.js"></script>
 
-  <link rel="stylesheet" href="../inc/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../inc/dist/css/main.css">
-  <link rel="stylesheet" href="../inc/dist/fontawesome/css/all.css">
-  <link rel="stylesheet" href="../inc/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="../inc/dist/css/_all-skins.min.css">
-  <link rel="stylesheet" href="../inc/dist/style.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/style.css">
   <style type="text/css">
     textarea{
       resize: none;
@@ -41,7 +41,7 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 
   <nav class="navbar is-fixed-top navbar-expand-lg color">
       <a class="navbar-brand" href="#">
-        <img src="../inc/img/logo-color.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="<?php echo FARMWEB_URL; ?>inc/img/logo-color.png" width="30" height="30" class="d-inline-block align-top" alt="">
             FarmKonect
       </a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -1,5 +1,5 @@
 <?php
-defined('board') or 
+defined('homee') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 ?>
 <div class="container-fluid">

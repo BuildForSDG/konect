@@ -98,15 +98,19 @@ class model extends DBCon{
                 }
                 break;
         }
-        /**
-         * $sql = "SELECT * FROM ".$table;
-         * $sql .= " WHERE userid =".$userid;
+		return $array;
+    }
+
+    public function viewTable($table)
+    {
+        $sql = "SELECT * FROM ".$table;
+        $sql .= " WHERE status =1";
         $array = array();
         $query = $this->conector->query($sql);
         while ($row = $query->fetch_array()) {
-			$array[] = $row;
+            $array[] = $row;
         }
-        **/
+               
 		return $array;
     }
 

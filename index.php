@@ -127,13 +127,26 @@ $route->any('/prdct-edt/{id}', function($id){
 });
 
 
-$route->get(['/', 'board'], function(){
+$route->get(['/board'], function(){
 
 	define('header', TRUE);
 	require_once('./src/header.php');
 
 	define('board', TRUE);
 	require_once('./src/board.php');
+
+	define('footer', TRUE);
+	require_once('./src/footer.php');
+
+});
+
+$route->get(['/', 'home'], function(){
+
+	define('head', TRUE);
+	require_once('./src/head.php');
+
+	define('homee', TRUE);
+	require_once('./src/home.php');
 
 	define('footer', TRUE);
 	require_once('./src/footer.php');
