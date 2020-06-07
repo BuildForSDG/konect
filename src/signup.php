@@ -3,7 +3,7 @@ define('header', TRUE);
 require_once('header.php');
 
 include_once('./gen/function.php');
-user();
+userSignUp();
 ?>
 
 

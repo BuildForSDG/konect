@@ -1,7 +1,7 @@
 <?php
 defined('edt-prdct') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
-date_default_timezone_set('Africa/Lagos');
+//date_default_timezone_set('Africa/Lagos');
 $error_message = '';
 ?>
 <?php
@@ -23,6 +23,32 @@ $error_message = '';
         $status 		= $key['status'];
 
 ?>
+<?php
+
+if (isset($_POST['prd_update_btn'])){ 
+   
+   $authID = $prdct->authId('products', $id);
+   $id = array('id' => $authID);
+   $date = new DateTime();
+   $currentTime = $date->format('Y-m-d H:i:s');
+   $array = array(
+       'owner' 	        => 	escape($_POST['owner']),
+       'phone' 	        => 	escape($_POST['phone']),
+       'name' 		    => 	escape($_POST['title']),
+       'description'    => 	escape($_POST['desc']),
+       'price' 	        =>	escape($_POST['price']),	
+       'location'	    =>	escape($_POST['location']),
+       'updated_at'     =>	$currentTime
+   );
+   
+   $upd = $prdct->update('products', $id, $array);
+   if (!$upd) {
+       $error_message = " Having some certain error, check your input ";
+   }else{
+       $error_message = " Sucessfully updated.. ";
+   }
+}
+?>
 
 <div class="container-fluid">
 	<div class="row">
@@ -33,23 +59,12 @@ $error_message = '';
             <div class="card ">
                 <div class="card-header">
 			  	    <div class="card-header-right">
-					    <a href="product.php" class="btn color btn-sm">All Product</a>
+					    <a href="<?php echo FARMWEB_URL; ?>product" class="btn color btn-sm">All Product</a>
 				    </div>
-                    <h4 class="card-title">Add New Product</h4>
-                    <p class="category"> 
+                    <h4 class="card-title">Update Product</h4>
                     <div class="alert color text-center">
-                        <?php
-                            if(isset($_SESSION['farmkonectmessage'])){
-                                ?>
-                                <div class="alert alert-info text-center">
-                                <?php echo $_SESSION['farmkonectmessage']; ?>
-                                </div>
-                                <?php
-                                unset($_SESSION['farmkonectmessage']);
-                            }
-                        ?>
+                        <?php echo $error_message; ?>
                     </div>
-                    </p>
                 </div>
                 <div class="card-body">
                     <form method="post" action="">
@@ -77,7 +92,7 @@ $error_message = '';
                             </div>
                         </div>
 
-                        <!--div class="form-row"-->
+                        <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputLocation">location <i style="color: red">*</i></label>
                                 <input name="location" value="<?php echo $location?>" type="text" class="form-control" id="inputLocation" placeholder="Location" required>
@@ -90,8 +105,8 @@ $error_message = '';
                                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                     <div class="invalid-feedback">Example invalid custom file feedback</div>
                                 </div>
-                            </div>
-                        </div-->
+                            </div-->
+                        </div>
                         
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Description</label>
@@ -114,27 +129,14 @@ $error_message = '';
 	</div>
 </div>
 <?php
-if (isset($_POST['prd_update_btn'])){ 
-    $authID = $prdct->authId('products', $id);
-    $id = array('id' => $authID);
-    $date = new DateTime();
-    $currentTime = $date->format('Y-m-d H:i:s');
-    $array = array(
-        'owner' 	    => 	escape($_POST['owner']),
-        'phone' 	    => 	escape($_POST['phone']),
-        'name' 		    => 	escape($_POST['title']),
-        'description'   => 	escape($_POST['desc']),
-        'price' 	    =>	escape($_POST['price']),	
-        'location'	    =>	escape($_POST['location']),
-        'created_at'    =>	$currentTime
-    );
-    
-    $upd = $prdct->update('products', $id, $array);
-    if (!$upd) {
-        $_SESSION['farmkonectmessage'] = " Having some certain error, check your input ";
-    }else{
-        $_SESSION['farmkonectmessage'] = " Sucessfully updated.. ";
-        header('location: ../src/product.php');
-    }
-}
+
+/**
+<script>
+    $(document).ready(function()){
+        $("button").click(function(){
+            location.reload(true);
+        });
+    });
+</script>
+**/
 ?>

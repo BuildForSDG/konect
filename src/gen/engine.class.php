@@ -76,15 +76,37 @@ class model extends DBCon{
         }
     }
 
-    public function product($table)
+    public function product($table, $userid, $role = NULL)
     {
-        $sql = "SELECT * FROM ".$table;
-        $sql .= " WHERE status = 1 ";
+        switch ($role) {
+            case 'Agent':
+                $sql = "SELECT * FROM ".$table;
+                $sql .= " WHERE userid =".$userid;
+                $array = array();
+                $query = $this->conector->query($sql);
+                while ($row = $query->fetch_array()) {
+                    $array[] = $row;
+                }
+                break;
+            
+            default:
+                $sql = "SELECT * FROM ".$table;
+                $array = array();
+                $query = $this->conector->query($sql);
+                while ($row = $query->fetch_array()) {
+                    $array[] = $row;
+                }
+                break;
+        }
+        /**
+         * $sql = "SELECT * FROM ".$table;
+         * $sql .= " WHERE userid =".$userid;
         $array = array();
         $query = $this->conector->query($sql);
         while ($row = $query->fetch_array()) {
 			$array[] = $row;
-		}
+        }
+        **/
 		return $array;
     }
 

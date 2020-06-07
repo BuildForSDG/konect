@@ -34,29 +34,34 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   </div>
 </footer>
 
-<script src="../inc/js/jquery-2.2.4.min.js"></script>
-  <script src="../inc/js/bootstrap.min.js"></script>
-  <script src="../inc/js/jquery.dataTables.min.js"></script>
-  <script src="../inc/js/dataTables.bootstrap.min.js"></script>
-  <script src="../inc/js/select2.full.min.js"></script>
-  <script src="../inc/js/jquery.inputmask.js"></script>
-  <script src="../inc/js/jquery.inputmask.date.extensions.js"></script>
-  <script src="../inc/js/jquery.inputmask.extensions.js"></script>
-  <script src="../inc/js/moment.min.js"></script>
-  <script src="../inc/js/bootstrap-datepicker.js"></script>
-  <script src="../inc/js/icheck.min.js"></script>
-  <script src="../inc/js/fastclick.js"></script>
-  <script src="../inc/js/jquery.sparkline.min.js"></script>
-  <script src="../inc/js/jquery.slimscroll.min.js"></script>
-  <script src="../inc/js/jquery.fancybox.pack.js"></script>
-  <script src="../inc/js/app.min.js"></script>
+<script src="<?php echo FARMWEB_URL; ?>inc/js/jquery-2.2.4.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/bootstrap.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.dataTables.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/dataTables.bootstrap.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/select2.full.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.inputmask.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.inputmask.date.extensions.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.inputmask.extensions.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/moment.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/bootstrap-datepicker.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/icheck.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/fastclick.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.sparkline.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.slimscroll.min.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/jquery.fancybox.pack.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/app.min.js"></script>
   <script src="ckeditor/ckeditor.js"></script>
-  <script src="../inc/js/demo.js"></script>
+  <script src="<?php echo FARMWEB_URL; ?>inc/js/demo.js"></script>
 
   <script>
     $('#confirm-delete').on('show.bs.modal', function(e) {
 	      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 	  });
 
+    $(document).ready( function () {
+      $('#myTable').DataTable()({
+        scrollY: 400
+      });
+    });
     </script>
 </html>

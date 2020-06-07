@@ -1,4 +1,10 @@
 <?php
+// Defining the website url
+define("FARMWEB_URL", "http://localhost/2020/BuildForSDG/team045/konect-Backend/");
+
+// Getting the Upload url
+define("FARMWEB_UPLOAD", FARMWEB_URL . "inc/ufl" . "/");
+
 function escape($string) {
     //strip_tags();
         return htmlentities($string, ENT_QUOTES, 'UTF-8');
@@ -6,6 +12,7 @@ function escape($string) {
 /**
  * this class deals with our datatbase configuration
  */
+ 
 class DBCon{
 
     private $host 		= 'localhost';
@@ -30,8 +37,5 @@ class DBCon{
         return $this->conector;
     }
 }
-$con = new mysqli("localhost", "root", "", "farmKonect");
-if ($con->connect_errno) {
-    echo "Failed to connect (".$con->connect_errno.")".$con->connect_error;
-}
+
 ?>

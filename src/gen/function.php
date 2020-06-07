@@ -2,7 +2,7 @@
 include_once('engine.class.php');
 
 // you can only call this function in the users signup page by modifing all the fields here.  i.e user()
-function user(){	
+function userSignUp(){	
 	//$error_message = '';
 	$user = new model();
 		
@@ -48,30 +48,6 @@ function user(){
 	}
 }
 
-function loggo(){
-	$user = new model();
-
-	if(isset($_POST['logoon'])) {
-
-	  $username 	= escape($_POST['username']);
-	  $pass 		= escape($_POST['password']);
-	        
-	    if(empty($email) || empty($password)) {
-	        $GLOBALS['error_message'] = 'Email and/or Password can not be empty<br>';
-	    } else {
-	      $auth = $user->signin($username, $pass);
-
-	      if(!$auth){
-	      $GLOBALS['error_message'] = 'Invalid username or password';
-	        //header('location:signin.php');
-	      }else{
-	      
-	      $_SESSION['user']['role'] = $auth;
-	      header('location: board.php');
-	    }
-	  }
-	}
-}
 
 function logIn(){
 	$user = new model();
@@ -98,7 +74,7 @@ function logIn(){
 	}
 }
 
-function product($userid){
+function producti($userid){
 	$user = new model();
 		if (empty($_POST['title']) && empty($_POST['price']) && empty($_POST['location']) && empty($_POST['desc'])) {
 		        $_SESSION['message'] = "All fields with <b style='color: red;'>*</b> is required!";
