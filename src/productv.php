@@ -257,7 +257,7 @@ $error_message = '';
                                                 </div>
                                                 <div class="col-xs-12">
                                                     <ul class="select-rate list-inline ptb-20">
-                                                        <li><span>Your Rating : </span>
+                                                        <li><span>Your Rating :: </span>
                                                         </li>
                                                         <li>
                                                             <span class="rating" role="button">
