@@ -60,6 +60,17 @@ $route->any('/product', function(){
 	require BASE_PATH.'./src/footer.php';
 });
 
+$route->any('/productv/v/', function(){
+	define('header', TRUE);
+	require BASE_PATH.'./src/header.php';
+
+	define('productvv', TRUE);
+			require BASE_PATH.'./src/productv.php';
+
+	define('footer', TRUE);
+	require BASE_PATH.'./src/footer.php';
+});
+
 $route->any('/comment', function(){
 	
 });

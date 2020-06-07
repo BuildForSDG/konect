@@ -84,13 +84,13 @@ foreach ($data as $key) {
                     </div>
                 </div>
                 <div class="card-block px-6">
-                    <h4 class="card-title">Kartaera Farm </h4>
-                    <p class="card-text"><b>Owner:</b>
+                    <h4 class="card-title"><?php echo $name;?></h4>
+                    <p class="card-text"><b>Owner: <?php echo $owner;?></b>
                     
-                    <p class="card-text"><b>Location:</b> </p>
-                    <p class="card-text"><b>Details:</b> </p>
+                    <p class="card-text"><b>Location: <?php echo $location;?></b> </p>
+                    <p class="card-text"><b>Details: <?php echo $description;?></b> </p>
                     <br>
-                    <a href="#" class="mt-auto btn color">Order</a>
+                    <a href="<?php echo FARMWEB_URL; ?>productv/v/<?php echo $key['id']; ?>" class="mt-auto btn color">Order</a>
                 </div>
             </div>
 <?php } ?> 
