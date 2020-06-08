@@ -114,6 +114,13 @@ class model extends DBCon{
 		return $array;
     }
 
+    public function coutTables($table)
+    {
+        $statement = $pdo->prepare("SELECT * FROM tbl_user");
+        $statement->execute();
+        $total_user = $statement->rowCount();
+    }
+
     public function viewComment($productId)
     {
         $sql = "SELECT * FROM comments";

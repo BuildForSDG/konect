@@ -60,7 +60,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
+  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/all.css">
   <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/datatables.min.css"/>
  
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/datatables.min.js"></script>
@@ -69,74 +69,10 @@ if($_SESSION['farmkonectuser']['role']=='User') {
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?php echo FARMWEB_URL; ?>inc/dist/js/jquery.slim.js"></script>
 
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo FARMWEB_URL; ?>inc/dist/css/main.css">
-  <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/fontawesome/css/all.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/css/_all-skins.min.css">
   <link rel="stylesheet" href="<?php echo FARMWEB_URL; ?>inc/dist/style.css">
   <style type="text/css">
-  body {
-    background-color:  #eee;
-  }
-  .title {
-  
-      margin-bottom: 50px;
-      text-transform: uppercase;
-  }
-
-  .card-block {
-      font-size: 1em;
-      position: relative;
-      margin: 0;
-      padding: 1em;
-      border: none;
-      border-top: 1px solid rgba(34, 36, 38, .1);
-      box-shadow: none;
-      
-  }
-  .card {
-      font-size: 1em;
-      overflow: hidden;
-      padding: 5;
-      border: none;
-      border-radius: .28571429rem;
-      box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-      margin-top:20px;
-  }
-
-  .carousel-indicators li {
-      border-radius: 12px;
-      width: 12px;
-      height: 12px;
-      background-color: #404040;
-  }
-  .carousel-indicators li {
-      border-radius: 12px;
-      width: 12px;
-      height: 12px;
-      background-color: #404040;
-  }
-  .carousel-indicators .active {
-      background-color: white;
-      max-width: 12px;
-      margin: 0 3px;
-      height: 12px;
-  }
-  .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-  }
-
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-  }
-  lex-direction: column;
-  }
-
-  .btn {
-    margin-top: auto;
-  }
-
   /** main */
     textarea{
       resize: none;

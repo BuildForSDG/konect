@@ -1,8 +1,4 @@
 <?php
-/**
-define('header', TRUE);
-require_once('header.php');
-**/
 
 defined('login') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
@@ -83,9 +79,4 @@ $error_message='';
     
   </div>
 </div>
-
-<?php 
-define('footer', TRUE);
-require_once('footer.php');
-?>
                 

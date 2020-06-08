@@ -23,8 +23,14 @@ $route->any('/user', function(){
 
 $route->any('/signin', function(){
 
+	define('head', TRUE);
+	require_once('./src/head.php');
+
 	define('login', TRUE);
 	include(BASE_PATH. './src/login.php');
+
+	define('footer', TRUE);
+	require_once('./src/footer.php');
 });
 
 $route->any('/signup', function(){
