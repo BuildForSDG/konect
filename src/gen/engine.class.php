@@ -44,7 +44,19 @@ class model extends DBCon{
         }
 
     }
-    
+
+    public function state()
+    {
+        $sql = "SELECT * FROM `state`";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+            
+        return $array;
+    }
+
     public function UpdateProduct($name, $id){
         // Getting img ID to delete it from folder
 
