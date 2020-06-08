@@ -3,7 +3,6 @@
 defined('login') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 
-ob_start();
 session_start();
 
 $con = new mysqli("localhost", "root", "", "farmKonect");

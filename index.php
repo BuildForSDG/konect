@@ -14,8 +14,18 @@ $route->any('/user', function(){
 	define('header', TRUE);
 	require_once('./src/header.php');
 
-	echo "<h2>user</h2>";
-	echo "<h2 align='center'> Hello world! </h2>";
+	echo 'all users';
+
+	define('footer', TRUE);
+	require_once('./src/footer.php');
+});
+
+$route->any('/add-user', function(){
+	define('header', TRUE);
+	require_once('./src/header.php');
+
+	define('add-user', TRUE);
+	require_once('./src/add-user.php');
 
 	define('footer', TRUE);
 	require_once('./src/footer.php');
@@ -34,8 +44,14 @@ $route->any('/signin', function(){
 });
 
 $route->any('/signup', function(){
-	define('login', TRUE);
+	define('head', TRUE);
+	require_once('./src/head.php');
+
+	define('signupp', TRUE);
 	include(BASE_PATH. './src/signup.php');
+
+	define('footer', TRUE);
+	require_once('./src/footer.php');
 });
 
 
