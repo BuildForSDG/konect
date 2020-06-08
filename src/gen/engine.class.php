@@ -127,6 +127,19 @@ class model extends DBCon{
 		return $array;
     }
 
+    public function getUserName($Id)
+    {
+        $sql = "SELECT * FROM users";
+        $sql .= " WHERE id =".$Id;
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+               
+		return $array;
+    }
+
     public function productPic($UniqId)
     {
         $sql = "SELECT * FROM `product_img` WHERE unique_Key ="."'".$UniqId."'";

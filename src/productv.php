@@ -3,16 +3,19 @@ defined('productvv') or
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 //date_default_timezone_set('Africa/Lagos');
 $error_message = '';
+session_start();
 ?>
 <?php
     $prdct = new model();
-        $authID = $prdct->authId('products', $id);
+
+    $authID = $prdct->authId('products', $id);
     //fetch product data
     $data = $prdct->productById($authID);
        
     foreach ($data as $key) {
         // fetch product Variables... 
         
+        $productId		= $key['id'];
         $name		 	= $key['name'];
         $image 			= $key['img_key'];
         $owner 			= $key['owner'];
@@ -20,10 +23,26 @@ $error_message = '';
         $phone       	= $key['phone'];
         $price 			= $key['price'];
         $location 		= $key['location'];
-        $keyy     = $key['img_key'];
+        $keyy           = $key['img_key'];
 
         $Img = $prdct->productPic($keyy);
         $Img2 = $prdct->productPic($keyy);
+
+        $Comment = $prdct->viewComment($productId);
+        //$getUserName = $prdct->getUserName()
+        if (isset($_POST['comment_btn'])) {
+            $Commentarray = array(
+                'user_id' 	    => 	$_SESSION['farmkonectuser']['id'],
+                'productId'     => 	$productId,
+                'msg' 	        => 	escape($_POST['MSGG'])
+            );
+            $CommentInst = $prdct->InsertData('comments', $Commentarray);
+            if (!$CommentInst) {
+                $error_message = " check your input ";
+            }else{
+                $error_message = " Thanks you for the review..";
+            }
+        }
 
 ?>
     <br><br><br>
@@ -75,6 +94,16 @@ $error_message = '';
                         <div class="col-xs-12">
                             <div class="posted-review panel p-30">
                                 <h3 class="h-title">16 Comment</h3>
+
+                                <?php 
+                                foreach ($Comment as $Cmnt) { 
+                                    $USerId     = $Cmnt['user_id']; 
+                                    $MSG        = $Cmnt['msg']; 
+                                    $DateComment = $Cmnt['created_at']; 
+
+                                    $getUserName = $prdct->getUserName($USerId)
+                                    
+                                ?>
                                 <div class="review-single pt-30">
                                     <div class="media">
                                         <div class="media-left">
@@ -84,44 +113,42 @@ $error_message = '';
                                             <div class="review-wrapper clearfix">
                                                 <ul class="list-inline">
                                                     <li>
-                                                        <span class="review-holder-name h5">John Doe</span>
-                                                    </li>
-                                                    <li>
-                                                        <div class="rating">
-                                                            <span class="rating-stars" data-rating="5">
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </span>
-                                                        </div>
+                                                    <?php foreach ($getUserName as $CommentUser) { 
+                                                        $name = $CommentUser['first_name']." ".$CommentUser['last_name'];?>
+                                                        <span class="review-holder-name h5"><?php echo $name;?></span>
+                                                    <?php } ?>
                                                     </li>
                                                 </ul>
-                                                <p class="review-date mb-5">September 9, 2016</p>
-                                                <p class="copy">Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam.</p>
+                                                <p class="review-date mb-5"><?php echo $DateComment;?></p>
+                                                <p class="copy"><?php echo $MSG;?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
-                                        <?php } ?>
+                        <?php } ?>
+
                         <div class="col-xs-12 col-md-12">
                             <div class="post-review panel p-20">
                                 <h3 class="h-title">Comment Review</h3>
-                                <form class="horizontal-form pt-30" action="#">
+                                <div style="color: red;">
+                                    <?php echo $error_message; ?>
+                                </div>
+                                <form class="horizontal-form pt-30" method="post" action="#">
                                     <div class="row row-v-10">
                                         <div class="col-sm-12 col-md-12 col-xs-12">
-                                            <textarea class="form-control" placeholder="Your Review" rows="6"></textarea>
+                                            <textarea name="MSGG" class="form-control" placeholder="Your Review" rows="6"></textarea>
                                         </div><br>
                                         <div class="col-sm-12">
-                                            <button type="submit" class="btn mt-20">Submit review</button>
+                                            <button type="submit" name="comment_btn" class="btn mt-20">Submit review</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
             <div class="col-2"></div>

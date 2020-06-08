@@ -76,75 +76,7 @@ if (isset($_POST['prd_add_btn'])){
         $error_message = " Sucessfully updated.. ";
     }
 }
-     /**
-     // File upload configuration 
-     $targetDir = "inc/ufl/"; 
-     $allowTypes = array('jpg','png','jpeg','gif');
-     $kys = '9876543210kyvxabcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
-    $kys = substr(str_shuffle($kys), 0, 18); 
-      
-     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
-     $fileNames = array_filter($_FILES['files']['name']); 
-     if(!empty($fileNames)){ 
-         foreach($_FILES['files']['name'] as $key=>$val){ 
-             // File upload path 
-             $fileName = basename($_FILES['files']['name'][$key]); 
-             // Check whether file type is valid 
-             $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-             $randky = '9876543210kyvxabcdefghijklmnopqrstuvwxyz35gnvdjABCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
-             $randky = 'product-'.substr(str_shuffle($randky), 0, 18).'fk';
-             $final_name = $randky.'.'.$fileType;
-             if(in_array($fileType, $allowTypes)){ 
-                 // Upload file to server 
-                 if(move_uploaded_file($_FILES["files"]["tmp_name"][$key], $targetDir.$final_name)){ 
-                     // Image db insert sql 
-                     $insertValuesSQL = "('".$final_name."', '".$kys."', NOW()),"; 
-                 }else{ 
-                     $errorUpload .= $_FILES['files']['name'][$key].' | '; 
-                 } 
-             }else{ 
-                 $errorUploadType .= $_FILES['files']['name'][$key].' | '; 
-             } 
-         } 
-          
-         if(!empty($insertValuesSQL)){ 
-             $insertValuesSQL = trim($insertValuesSQL, ','); 
-             // Insert image file name into database 
-             $conector = new mysqli('localhost', 'root', '', 'farmkonect');
-             $insert = $conector->query("INSERT INTO product_img (img_Url, unique_Key, date_upload) VALUES $insertValuesSQL"); 
-             if($insert){ 
-                 $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
-                 $errorUploadType = !empty($errorUploadType)?'File Type Error: '.trim($errorUploadType, ' | '):''; 
-                 $errorMsg = !empty($errorUpload)?'<br/>'.$errorUpload.'<br/>'.$errorUploadType:'<br/>'.$errorUploadType; 
-                 $statusMsg = "Files are uploaded successfully.".$errorMsg; 
-             }else{ 
-                 $statusMsg = "Sorry, there was an error uploading your file."; 
-             } 
-         } 
-     }else{ 
-         $statusMsg = 'Please select a file to upload.'; 
-     }
-    } 
-**
-   $array = array(
-       'userid' 	    => 	$_SESSION['farmkonectuser']['id'],
-       'owner' 	        => 	escape($_POST['owner']),
-       'phone' 	        => 	escape($_POST['phone']),
-       'name' 		    => 	escape($_POST['title']),
-       'description'    => 	escape($_POST['desc']),
-       'price' 	        =>	escape($_POST['price']),	
-       'location'	    =>	escape($_POST['location']),
-       'img_key'	    =>	$kys
-   );
-   
-   $addd = $prdct->InsertData('products', $array);
-   if (!$addd) {
-       $error_message = " Having some certain error, check your input ";
-   }else{
-       $error_message = " Sucessfully updated.. ";
-   }
-}
-**/
+
 ?>
 
 <div class="container-fluid">
