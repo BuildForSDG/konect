@@ -6,15 +6,21 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
   <div class="row">
     <div class="col-12">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+      <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/01.png" alt="First slide">
+            <img class="d-block w-100" style="height: 250px;" src="inc/img/01.jpeg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/02.png" alt="Second slide">
+            <img class="d-block w-100" style="height: 250px;" src="inc/img/02.jpeg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/03.png" alt="Third slide">
+            <img class="d-block w-100" style="height: 250px;" src="inc/img/03.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 250px;" src="inc/img/04.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 250px;" src="inc/img/05.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -35,7 +41,7 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
     <div class="row">
       <div class="col-12">
       <div class="container py-3">
-        <div class="title h1 text-center">Horizontal cards - Bootstrap 4</div>
+        <div class="title h1 text-center">Feature Products</div>
         <!-- Card Start -->
         <div class="card">
           <div class="row ">
@@ -53,7 +59,10 @@ foreach ($data as $key) {
   $description  = $key['description'];
   $price      = $key['price'];
   $location     = $key['location'];
-  $status     = $key['status'];
+  $keyy     = $key['img_key'];
+
+  $Img = $prdct->productPic($keyy);
+ 
 ?>
 
             <div class="col-md-3 col-sm-3 col-xs-6">
@@ -62,17 +71,16 @@ foreach ($data as $key) {
                         <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                         <li data-target="#CarouselTest" data-slide-to="1"></li>
                         <li data-target="#CarouselTest" data-slide-to="2"></li>
+                        <li data-target="#CarouselTest" data-slide-to="3"></li>
+                        <li data-target="#CarouselTest" data-slide-to="4"></li>
+                        <li data-target="#CarouselTest" data-slide-to="5"></li>
                     </ol>
                     <div class="carousel-inner">
+  <?php foreach ($Img as $Ig) { $productImage = $Ig['img_Url']; ?>
                         <div class="carousel-item active">
-                            <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
+                            <img class="d-block" style="height: 200px;" src="inc/ufl/<?php echo $productImage; ?>" alt="">
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block" src="https://picsum.photos/450/300?image=855" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="">
-                        </div>
+                        
                         <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -81,8 +89,10 @@ foreach ($data as $key) {
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
+                        <?php } ?>
                     </div>
                 </div>
+               
                 <div class="card-block px-6">
                     <h4 class="card-title"><?php echo $name;?></h4>
                     <p class="card-text"><b>Owner: <?php echo $owner;?></b>
@@ -99,47 +109,7 @@ foreach ($data as $key) {
         </div>
         <!-- End of card -->
 
-      </div>
-
-      <div class="container">
-        <div class="card float-left">
-          <div class="row ">
-
-            <div class="col-sm-7">
-              <div class="card-block">
-                <!--           <h4 class="card-title">Small card</h4> -->
-                <p>Wetgple text to build your own card.</p>
-                <p>Change around the content for awsomenes</p>
-                <a href="#" class="btn btn-primary btn-sm">Read More</a>
-              </div>
-            </div>
-
-            <div class="col-sm-5">
-              <img class="d-block w-100" src="https://picsum.photos/150?image=380" alt="">
-            </div>
-          </div>
-        </div>
-
-      
-          <div class="card float-right">
-            <div class="row">
-              <div class="col-sm-5">
-                <img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
-              </div>
-              <div class="col-sm-7">
-                <div class="card-block">
-                  <!--           <h4 class="card-title">Small card</h4> -->
-                  <p>Copy paste the HTML and CSS.</p>
-                  <p>Change around the content for awsomenes</p>
-                  <br>
-                  <a href="#" class="btn btn-primary btn-sm float-right">Read More</a>
-                </div>
-              </div>
-      
-            </div>
-          </div>
-        </div>
-      
+      </div>      
       <br>
       <br>
       

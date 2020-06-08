@@ -8,13 +8,19 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/01.png" alt="First slide">
+            <img class="d-block w-100" style="height: 200px;" src="inc/img/01.jpeg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/02.png" alt="Second slide">
+            <img class="d-block w-100" style="height: 200px;" src="inc/img/02.jpeg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" style="height: 200px;" src="inc/img/03.png" alt="Third slide">
+            <img class="d-block w-100" style="height: 200px;" src="inc/img/03.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 200px;" src="inc/img/04.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" style="height: 200px;" src="inc/img/05.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

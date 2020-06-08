@@ -113,6 +113,39 @@ class model extends DBCon{
                
 		return $array;
     }
+/**
+    Full texts	
+    id
+    user_id
+    productId
+    msg
+    created_at
+    updated_at
+    **/
+    public function viewComment($table)
+    {
+        $sql = "SELECT * FROM comments";
+        $sql .= " WHERE productId =1";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+               
+		return $array;
+    }
+
+    public function productPic($UniqId)
+    {
+        $sql = "SELECT * FROM `product_img` WHERE unique_Key ="."'".$UniqId."'";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($picRow = $query->fetch_array()) {
+            $picture[] = $picRow;
+        }
+               
+		return $picture;
+    }
 
     public function productById($id)
     {
