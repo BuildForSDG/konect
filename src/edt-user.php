@@ -1,37 +1,58 @@
 <?php
-defined('add-user') or 
+defined('edt-user') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
+
+?>
+<?php
+    $prdct = new model();
+        $authID = $prdct->authId('products', $id);
+    //fetch product data
+    $data = $prdct->productById($authID);
+       
+    foreach ($data as $key) {
+        // fetch product Variables... 
+       
+        $U_fname		= $key['first_name'];
+        $U_lname 		= $key['last_name'];
+        $U_email 		= $key['email'];
+        $U_phone       	= $key['phone'];
+        $U_gender 		= $key['gender'];
+        $U_addresss 	= $key['residential_address'];
+        $U_role 		= $key['role'];
+        $U_verkey		= $key['is_verified'];
+
+?>
+<?php
 
 $error_message = '';
 $User = new model();
 $stateList = $User->state();
-$kys = '9876543210kyvxabcdefghijklmnopqrstuvCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
-$kys = substr(str_shuffle($kys), 0, 8); 
-if (isset($_POST['add_btn'])){  
+if (isset($_POST['update_btn'])){  
+    $authID = $prdct->authId('products', $id);
+    $id = array('id' => $authID);
+    $currentTime = $date->format('Y-m-d H:i:s');
+    
 //'img'                =>  escape($_POST['fname']),
 $Iarray = array(
     'first_name'         =>  escape($_POST['fname']),
     'last_name'          =>  escape($_POST['lname']),
     'email'              =>  escape($_POST['email']),
     'phone'              =>  escape($_POST['phone']),
-    'password'           =>  md5($kys),
     'gender'             =>  escape($_POST['gender']),
     'state'              =>  escape($_POST['state']),
     'residential_address'=>  escape($_POST['address']),
     'role'               =>  escape($_POST['role']),
-    'is_verified'        =>  escape($_POST['verify'])
+    'is_verified'        =>  escape($_POST['verify']),
+    'updated_at'         =>  $currentTime
 );
+
+    $upd = $prdct->update('users', $id, $Iarray);
+    if (!$upd) {
+        $error_message = " Having some certain error, check your input ";
+    }else{
+        $error_message = " Sucessfully Added user.. ";
+    }
     
-        if ($Iarray['email'] == $User->authEmail("users", $Iarray['email'])) {
-            $error_message = "Error you can duplicate input";
-        }else{
-        $addd = $User->InsertData('users', $Iarray);
-        if (!$addd) {
-            $error_message = " Having some certain error, check your input ";
-        }else{
-            $error_message = " Sucessfully Added user.. ";
-        }
-        }
 }
 
 ?>
@@ -57,21 +78,21 @@ $Iarray = array(
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputname">First Name <i style="color: red">*</i></label>
-                                <input name="fname" type="text" class="form-control" placeholder="First Name" required>
+                                <input name="fname" value="<?php echo $U_fname; ?>" type="text" class="form-control" placeholder="First Name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputname">Last Name <i style="color: red">*</i></label>
-                                <input name="lname" type="text" class="form-control" placeholder="Last Name" required>
+                                <input name="lname" value="<?php echo $U_lname; ?>" type="text" class="form-control" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email <i style="color: red">*</i></label>
-                                <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                                <input name="email" value="<?php echo $U_email; ?>" type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPhone">Phone</label>
-                                <input name="phone" type="tel" class="form-control" placeholder="phone number" required>
+                                <input name="phone" value="<?php echo $U_phone; ?>" type="tel" class="form-control" placeholder="phone number" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -97,7 +118,7 @@ $Iarray = array(
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Address <i style="color: red">*</i></label>
-                            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input name="address" value="<?php echo $U_addresss; ?>" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -119,8 +140,9 @@ $Iarray = array(
                                 </div>
                             </div>
                         </div>
-                        <button name="add_btn" type="submit" class="btn btn-color">Add</button><hr>
+                        <button name="update_btn" type="submit" class="btn btn-color">Update User</button><hr>
                     </form>
+                    <?php } ?>
                 </div>
               </div>
             </div>

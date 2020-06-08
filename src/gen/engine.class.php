@@ -47,7 +47,7 @@ class model extends DBCon{
 
     public function state()
     {
-        $sql = "SELECT * FROM `state`";
+        $sql = "SELECT * FROM `state` ORDER BY name ASC";
         $array = array();
         $query = $this->conector->query($sql);
         while ($row = $query->fetch_array()) {

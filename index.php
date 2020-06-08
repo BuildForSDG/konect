@@ -31,6 +31,27 @@ $route->any('/add-user', function(){
 	require_once('./src/footer.php');
 });
 
+$route->any('/edt-user/{id}', function($id){
+	// thing..
+	define('header', TRUE);
+	require BASE_PATH.'./src/header.php';
+
+		$product = new model();
+		$authID = $product->authId('users', $id);
+		if ($authID) {
+
+			define('edt-user', TRUE);
+			require BASE_PATH.'./src/edt-user.php';
+			
+			
+		}else{
+			header('location: ../src/logout.php');
+		}
+
+	define('footer', TRUE);
+	require BASE_PATH.'./src/footer.php';
+});
+
 $route->any('/signin', function(){
 
 	define('head', TRUE);

@@ -5,6 +5,8 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
 
 $error_message = '';
 $User = new model();
+$stateList = $User->state();
+
 if (isset($_POST['signup_btn'])){  
 $passs = escape($_POST['phone']);
 $Iarray = array(
@@ -72,8 +74,9 @@ $Iarray = array(
                             <div class="form-group col-md-6">
                                 <label for="inputState">State <i style="color: red">*</i></label>
                                 <select name="state" class="form-control" required>
-                                    <option value="kano">Kano</option>
-                                    <option value="bauchi">Jigawa</option>
+                                <?php foreach ($stateList as $State) { $list = $State['name'];?>
+                                    <option value="<?php echo $list;?>"><?php echo $list;?></option>
+                                <?php }?>
                                 </select>
                             </div>
                         </div>
