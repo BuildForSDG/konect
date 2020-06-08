@@ -13,6 +13,7 @@ $error_message = '';
     foreach ($data as $key) {
         // fetch product Variables... 
         
+        $PId            = $key['id'];
         $name		 	= $key['name'];
         $image 			= $key['img_key'];
         $owner 			= $key['owner'];
@@ -20,10 +21,11 @@ $error_message = '';
         $phone       	= $key['phone'];
         $price 			= $key['price'];
         $location 		= $key['location'];
-        $keyy     = $key['img_key'];
+        $keyy           = $key['img_key'];
 
-        $Img = $prdct->productPic($keyy);
+        $Img = $prdct->productPic($PId);
         $Img2 = $prdct->productPic($keyy);
+        $Comment = $prdct->viewComment()
 
 ?>
     <br><br><br>
@@ -83,6 +85,8 @@ $error_message = '';
                                         <div class="media-body">
                                             <div class="review-wrapper clearfix">
                                                 <ul class="list-inline">
+                                                <?php foreach ($Img as $Ig) { $Comment = $Ig['img_Url']; ?>
+                                     
                                                     <li>
                                                         <span class="review-holder-name h5">John Doe</span>
                                                     </li>
@@ -97,6 +101,7 @@ $error_message = '';
                                                     </span>
                                                         </div>
                                                     </li>
+                                                <?php } ?>
                                                 </ul>
                                                 <p class="review-date mb-5">September 9, 2016</p>
                                                 <p class="copy">Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam.</p>

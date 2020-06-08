@@ -113,19 +113,11 @@ class model extends DBCon{
                
 		return $array;
     }
-/**
-    Full texts	
-    id
-    user_id
-    productId
-    msg
-    created_at
-    updated_at
-    **/
-    public function viewComment($table)
+
+    public function viewComment($productId)
     {
         $sql = "SELECT * FROM comments";
-        $sql .= " WHERE productId =1";
+        $sql .= " WHERE productId =".$productId;
         $array = array();
         $query = $this->conector->query($sql);
         while ($row = $query->fetch_array()) {
