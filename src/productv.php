@@ -29,6 +29,8 @@ session_start();
         $Img2 = $prdct->productPic($keyy);
 
         $Comment = $prdct->viewComment($productId);
+
+        $coutTable = $prdct->coutTables('comments', $productId);
         //$getUserName = $prdct->getUserName()
         if (isset($_POST['comment_btn'])) {
             $Commentarray = array(
@@ -93,7 +95,7 @@ session_start();
                      
                         <div class="col-xs-12">
                             <div class="posted-review panel p-30">
-                                <h3 class="h-title">16 Comment</h3>
+                                <h3 class="h-title"><?php echo $coutTable; ?> Comment</h3>
 
                                 <?php 
                                 foreach ($Comment as $Cmnt) { 

@@ -114,11 +114,14 @@ class model extends DBCon{
 		return $array;
     }
 
-    public function coutTables($table)
+    public function coutTables($table, $Id)
     {
-        $statement = $pdo->prepare("SELECT * FROM tbl_user");
-        $statement->execute();
-        $total_user = $statement->rowCount();
+        $sql = "SELECT * FROM ".$table;
+        $sql .= " WHERE productId =".$Id;
+        $query = $this->conector->query($sql);
+        $tableCount = $query->num_rows;
+
+        return $tableCount;
     }
 
     public function viewComment($productId)
