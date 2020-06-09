@@ -7,6 +7,7 @@ $User = new model();
 $stateList = $User->state();
 $kys = '9876543210kyvxabcdefghijklmnopqrstuvCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
 $kys = substr(str_shuffle($kys), 0, 8); 
+$key = substr(str_shuffle($kys), 0, 40); 
 if (isset($_POST['add_btn'])){  
 //'img'                =>  escape($_POST['fname']),
 $Iarray = array(
@@ -19,17 +20,20 @@ $Iarray = array(
     'state'              =>  escape($_POST['state']),
     'residential_address'=>  escape($_POST['address']),
     'role'               =>  escape($_POST['role']),
+    'vkey'               =>  $key,
     'is_verified'        =>  escape($_POST['verify'])
 );
-    
+$Name   = $Iarray['first_name'];
+$Email  = $Iarray['email']; 
+$vKey   = $Iarray['vkey'];  
         if ($Iarray['email'] == $User->authEmail("users", $Iarray['email'])) {
-            $error_message = "Error you can duplicate input";
+            $error_message = "Error you can not duplicate input";
         }else{
         $addd = $User->InsertData('users', $Iarray);
         if (!$addd) {
-            $error_message = " Having some certain error, check your input ";
+            $error_message = " Error please, check your input ";
         }else{
-            $error_message = " Sucessfully Added user.. ";
+            include('gen/email.php');
         }
         }
 }

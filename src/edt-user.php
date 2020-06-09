@@ -1,35 +1,32 @@
 <?php
 defined('edt-user') or 
 die('<h2>404 Not Found.<em>You are caught!</em></h2>');
-
-?>
-<?php
-    $prdct = new model();
-        $authID = $prdct->authId('products', $id);
-    //fetch product data
-    $data = $prdct->productById($authID);
-       
-    foreach ($data as $key) {
-        // fetch product Variables... 
-       
-        $U_fname		= $key['first_name'];
-        $U_lname 		= $key['last_name'];
-        $U_email 		= $key['email'];
-        $U_phone       	= $key['phone'];
-        $U_gender 		= $key['gender'];
-        $U_addresss 	= $key['residential_address'];
-        $U_role 		= $key['role'];
-        $U_verkey		= $key['is_verified'];
-
-?>
-<?php
-
 $error_message = '';
+
 $User = new model();
+//fetch users data
+$user = $User->user();
 $stateList = $User->state();
+       
+foreach ($user as $key) {
+    // fetch product Variables... 
+    
+    $U_fname		= $key['first_name'];
+    $U_lname 		= $key['last_name'];
+    $U_email 		= $key['email'];
+    $U_phone       	= $key['phone'];
+    $U_gender 		= $key['gender'];
+    $U_addresss 	= $key['residential_address'];
+    $U_role 		= $key['role'];
+
+?>
+<?php
+
+
 if (isset($_POST['update_btn'])){  
-    $authID = $prdct->authId('products', $id);
+    $authID = $User->authId('users', $id);
     $id = array('id' => $authID);
+    $date = new DateTime();
     $currentTime = $date->format('Y-m-d H:i:s');
     
 //'img'                =>  escape($_POST['fname']),
@@ -46,9 +43,9 @@ $Iarray = array(
     'updated_at'         =>  $currentTime
 );
 
-    $upd = $prdct->update('users', $id, $Iarray);
+    $upd = $User->update('users', $id, $Iarray);
     if (!$upd) {
-        $error_message = " Having some certain error, check your input ";
+        $error_message = " Error : check your input ";
     }else{
         $error_message = " Sucessfully Added user.. ";
     }

@@ -261,6 +261,31 @@ class model extends DBCon{
         }
     }
 
+    public function verifyKey($keyy)
+    {
+        // Check the Requested id is valid or not
+        $sql = "SELECT * FROM users WHERE vkey ='".$keyy."'";
+        $array = array();
+        $query = $this->conector->query($sql);
+            while ($row = $query->fetch_array()) {
+                $array[] = $row;
+            }
+            foreach ($array as $row) {
+                $ky = $row['vkey'];
+                return $ky;
+            }
+    }
+
+    public function updateVKey($key)
+    {
+        $sql = "UPDATE `users` SET is_verified = 1 WHERE vkey ='".$key."'";
+		$query 	= 	$this->conector->query($sql);
+
+        if ($query) {
+            return true;
+        }
+    }
+
     public function delProduct($id)
     {
         // Getting img ID to delete it from folder
@@ -327,8 +352,18 @@ class model extends DBCon{
         return true;
     }
 
+    public function user()
+    {
+        $sql = "SELECT * FROM `users`";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+		return $array;
+    }
+
 
 }
-
 
 ?>

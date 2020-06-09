@@ -14,10 +14,24 @@ $route->any('/user', function(){
 	define('header', TRUE);
 	require_once('./src/header.php');
 
-	echo 'all users';
+	define('user', TRUE);
+	require_once('./src/user.php');
 
 	define('footer', TRUE);
 	require_once('./src/footer.php');
+});
+
+$route->any('/verify/{key}', function($key){
+	$User = new model();
+	$vKey = $User->verifyKey($key);
+	if ($vKey === $key) {
+		$vv = $User->updateVKey($key);
+		if($vv){
+		echo 'you have sucessfully activate your account..';
+		}
+	}else{
+		echo 'Please do signup';
+	}
 });
 
 $route->any('/add-user', function(){
@@ -36,13 +50,12 @@ $route->any('/edt-user/{id}', function($id){
 	define('header', TRUE);
 	require BASE_PATH.'./src/header.php';
 
-		$product = new model();
-		$authID = $product->authId('users', $id);
+		$User = new model();
+		$authID = $User->authId('users', $id);
 		if ($authID) {
 
 			define('edt-user', TRUE);
 			require BASE_PATH.'./src/edt-user.php';
-			
 			
 		}else{
 			header('location: ../src/logout.php');

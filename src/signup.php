@@ -7,8 +7,13 @@ $error_message = '';
 $User = new model();
 $stateList = $User->state();
 
-if (isset($_POST['signup_btn'])){  
-$passs = escape($_POST['phone']);
+$vkey = '9876543210kyvxabcdefghijklmnopqrstuvCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
+$vkey = substr(str_shuffle($vkey), 0, 8);
+
+if (isset($_POST['signup_btn'])){ 
+$vkey = '9876543210kyvxabcdefghijklmnopqrstuvCDEFGHIJKLMNOPQRSTUVWXYZjmnhoiup';
+$vkey = substr(str_shuffle($vkey), 0, 40); 
+$passs = escape($_POST['pass']);
 $Iarray = array(
     'first_name'         =>  escape($_POST['fname']),
     'last_name'          =>  escape($_POST['lname']),
@@ -19,17 +24,20 @@ $Iarray = array(
     'state'              =>  escape($_POST['state']),
     'residential_address'=>  escape($_POST['address']),
     'role'               =>  'User',
+    'vkey'               =>  $vkey,
     'is_verified'        =>  0
 );
-    
+$Name   = $Iarray['first_name'];
+$Email  = $Iarray['email']; 
+$vKey   = $Iarray['vkey'];  
         if ($Iarray['email'] == $User->authEmail("users", $Iarray['email'])) {
-            $error_message = "Error you can duplicate input";
+            $error_message = "Error you can not duplicate input";
         }else{
         $addd = $User->InsertData('users', $Iarray);
         if (!$addd) {
-            $error_message = " Having some certain error, check your input ";
+            $error_message = " Error please, check your input ";
         }else{
-            $error_message = " Sucessfully Signup check your email for verification ";
+            include('gen/email.php');
         }
         }
 }
