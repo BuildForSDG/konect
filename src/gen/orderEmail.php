@@ -7,6 +7,10 @@ require 'inc/PHPMailer/src/Exception.php';
 require 'inc/PHPMailer/src/PHPMailer.php';
 require 'inc/PHPMailer/src/SMTP.php';
 
+$Order = new model();
+$data = $Order->Order($Id);
+
+
  // create object of PHPMailer class with boolean parameter which sets/unsets exception.
  $mail = new PHPMailer(true);                              
  try {
@@ -28,18 +32,25 @@ require 'inc/PHPMailer/src/SMTP.php';
                  )
      );
 
+     foreach ($data as $key) {
+        // fetch data Variables... 
+        $UserId         = $key['user_id'];
+        $product        = $key['product'];
+        $orderCode      = $key['order_code'];
+    
+
      //recipients..
      $mail->setFrom("email@email.com", "Farm Konect"); // sender's email and name
-     $mail->addAddress($Email, $Name);  // receiver's email and name
-     $mail->addReplyTo('info@framkonect.com');
-     
+     $mail->addAddress($Email, $Name);  // receiver's email and name.
+     $mail->addReplyTo('info@gmail.com');
+    
      //contents..
      $mail->isHTML(true);
-     $mail->Subject = 'Comfirm your account';
-     $mail->Body    = "<h5>Hello click the button to activate your account</h5><p><a href='http://localhost/2020/BuildForSDG/team045/konect-Backend/verify/".$vKey."'><button>Verify</button></a></p>";
-       
+     $mail->Subject = 'Your Order Has been Accepted';
+     $mail->Body    = "<p>Thanks your <b>".$Name."</b> for placing the order, your order details below.</p><br>Order No: <b>".$OrderCode."</b><p>Our Agent ".$Agent.", will get in contact with you soon.</P>";
+     }
      $mail->send();
-     $error_message = "<div class='alert alert-success'>Sucessfully Signup check your email for verification </div>";
+     $error_message = "<div class='alert alert-success'></div>";
  }catch (Exception $e)
  {
  // handle error.

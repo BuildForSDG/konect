@@ -19,7 +19,7 @@ $error_message='';
 	    if(empty($userid) || empty($pass)) {
 	        $error_message = 'Email and/or Password can not be empty<br>';
 	    } else {
-	    	$sql = "SELECT * FROM users WHERE email = '$userid'";
+	    	$sql = "SELECT * FROM users WHERE email = '$userid' && is_verified = 1";
 	        $query = $con->query($sql);
 	        //$rows = $query->fetch_array();
 

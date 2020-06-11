@@ -61,16 +61,13 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo FARMWEB_URL; ?>">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="<?php echo FARMWEB_URL; ?>board">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Market</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Agents</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="<?php echo FARMWEB_URL; ?>agent">Agents</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +75,7 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">About</a>
-                  <a class="dropdown-item" href="#">Contact Us</a>
+                  <a class="dropdown-item" href="mailto:info@farmkonect.com">Contact Us</a>
                   <a class="dropdown-item" href="#">FAQS</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Support us</a>
@@ -86,7 +83,8 @@ die('<h2>404 Not Found.<em>You are caught!</em></h2>');
               </li>
             </ul>
           </div>
-          <a href="signin"><button class="btn btn-color" type="button">Login</button></a>&nbsp;&nbsp;
+          <a href="<?php echo FARMWEB_URL; ?>signin"><button class="btn btn-color" type="button">Login</button></a>&nbsp;/
+          <a href="<?php echo FARMWEB_URL; ?>signup"><button class="btn btn-color" type="button">Signup</button></a>&nbsp;
             <a href="#"><span><i class="fas fa-cart-plus"></i></span></a>&nbsp;&nbsp;
             <!--//start profiles -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

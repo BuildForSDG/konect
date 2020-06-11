@@ -21,7 +21,7 @@ One way for the country to escape for her current economic woes is to strengthen
 Focusing on the Agricultural sector is our own way of targeting three Sustainable Development Goals at once - No poverty, Zero hunger and Decent work/Economic growth. 
 
 ## Usage
-Users would register on the application under three different categories - Farmers, Customers and Transporters. Customers can browse the market section to views Farmers, their products and prices. After making purchase, the customer can then link up with an transporter of choice to deliver the products purchased.
+Users would register on the application under three different categories - Agent, Customers and Transporters. The Agent is the one that will add the farmers, product and name. Customers can browse the market section to views Farmers, their products and prices. After making purchase, the customer can then link up with an transporter of choice to deliver the products purchased.
 
 
 ## Setup
@@ -30,7 +30,11 @@ Run `composer install` and `composer dump-autoload` to get started.
 
 `index.php` is the entry to the project and source code should go into the `src` folder.
 
-All tests should be written in the test folder.
+- Go to src/gen/keys 
+- change the Web_root to your project path,
+- change the database details
+- move to src/gen/email change the email server details
+- then run it.
 
 #### Hints
 
@@ -59,7 +63,7 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 ## Acknowledgements
 
----
+--- To all the great Team Program managers and mentors that support this project.
 
 ## LICENSE
 MIT

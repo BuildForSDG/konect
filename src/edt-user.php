@@ -5,7 +5,8 @@ $error_message = '';
 
 $User = new model();
 //fetch users data
-$user = $User->user();
+$authID = $User->authId('users', $id);
+$user = $User->userById($authID);
 $stateList = $User->state();
        
 foreach ($user as $key) {
@@ -35,8 +36,8 @@ $Iarray = array(
     'last_name'          =>  escape($_POST['lname']),
     'email'              =>  escape($_POST['email']),
     'phone'              =>  escape($_POST['phone']),
-    'gender'             =>  escape($_POST['gender']),
-    'state'              =>  escape($_POST['state']),
+    'gender'             =>  $_POST['gender'],
+    'state'              =>  $_POST['state'],
     'residential_address'=>  escape($_POST['address']),
     'role'               =>  escape($_POST['role']),
     'is_verified'        =>  escape($_POST['verify']),
@@ -96,7 +97,7 @@ $Iarray = array(
                             <div class="form-group col-md-6">
                                 <label for="inputGender">Gender</label><br>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="m">
+                                <input class="form-check-input" type="radio" name="gender" checked value="m">
                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -132,7 +133,7 @@ $Iarray = array(
                                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="verify" value="0">
+                                    <input class="form-check-input" type="radio" name="verify" checked value="0">
                                     <label class="form-check-label" for="inlineRadio2">No</label>
                                 </div>
                             </div>

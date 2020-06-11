@@ -37,7 +37,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
 
 if($_SESSION['farmkonectuser']['role']=='User') {
   if( $currentroute != 'board' 
-      && $currentroute != 'profile-edit'
+      && $currentroute != 'manage-account'
       && $currentroute != 'order' 
       && $currentroute != 'edt-order' 
       && $currentroute != 'del-order'
@@ -109,10 +109,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
                 <a class="nav-link" href="#">Market</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Agents</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="<?php echo FARMWEB_URL; ?>agent">Agents</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,7 +117,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">About</a>
-                  <a class="dropdown-item" href="#">Contact Us</a>
+                  <a class="dropdown-item" href="mailto:info@farmkonect.com">Contact Us</a>
                   <a class="dropdown-item" href="#">FAQS</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Support us</a>
@@ -139,10 +136,9 @@ if($_SESSION['farmkonectuser']['role']=='User') {
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Dashboard</a>
-                  <a class="dropdown-item" href="#">Notification</a>
-                  <a class="dropdown-item" href="#">Edit Profile</a>
+                  <a class="dropdown-item" href="<?php echo FARMWEB_URL; ?>manage-account">Edit Profile</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="./logout">LogOut</a>
+                  <a class="dropdown-item" href="<?php echo FARMWEB_URL; ?>logout">LogOut</a>
                 </div>
               </li>
           </ul>
@@ -168,7 +164,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
 
           <?php if($_SESSION['farmkonectuser']['role'] == 'Admin'): ?>
               <li class="treeview <?php if( ($currentroute == 'add-user')||($currentroute == 'user')||($currentroute == 'edt-user') ) {echo 'active';} ?>">
-                <a href="user">
+                <a href="<?php echo FARMWEB_URL; ?>user">
                   <i class="fa fa-user-plus"></i> <span>User</span>
                 </a>
               </li>
@@ -179,7 +175,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
                 || $_SESSION['farmkonectuser']['role'] == 'Agent'):
           ?>
               <li class="treeview <?php if( ($currentroute == 'add-prdct')||($currentroute == 'product')||($currentroute == 'edt-prdct') ) {echo 'active';} ?>">
-                <a href="product">
+                <a href="<?php echo FARMWEB_URL; ?>product">
                   <i class="fa fa-newspaper-o"></i> <span>Product</span>
                 </a>
               </li>
@@ -194,7 +190,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
                 || $_SESSION['farmkonectuser']['role'] == 'Agent'):
           ?>
               <li class="treeview <?php if( ($currentroute == 'comment') ) {echo 'active';} ?>">
-                <a href="comment">
+                <a href="<?php echo FARMWEB_URL; ?>comment">
                   <i class="fa fa-comment"></i> <span>Comment</span>
                 </a>
               </li>
@@ -204,7 +200,7 @@ if($_SESSION['farmkonectuser']['role']=='User') {
 
 
               <li class="treeview <?php if( ($currentroute == 'add-order')||($currentroute == 'order')||($currentroute == 'edt-order') ) {echo 'active';} ?>">
-                <a href="order">
+                <a href="<?php echo FARMWEB_URL; ?>order">
                   <i class="fa fa-file"></i> <span>Order</span>
                 </a>
               </li>
@@ -213,26 +209,15 @@ if($_SESSION['farmkonectuser']['role']=='User') {
             if($_SESSION['farmkonectuser']['role'] == 'Admin' 
                 || $_SESSION['farmkonectuser']['role'] == 'Agent' || $_SESSION['farmkonectuser']['role'] == 'User'):
           ?>
-              <li class="treeview <?php if( ($currentroute == 'notification') ) {echo 'active';} ?>">
-                <a href="notification">
-                  <i class="fa fa-cog"></i> <span>Notification</span>
-                </a>
-              </li>
-              <?php endif; ?>
-
-          <?php 
-            if($_SESSION['farmkonectuser']['role'] == 'Admin' 
-                || $_SESSION['farmkonectuser']['role'] == 'Agent' || $_SESSION['farmkonectuser']['role'] == 'User'):
-          ?>
               <li class="treeview <?php if( ($currentroute == 'manage-account') ) {echo 'active';} ?>">
-                <a href="manage-account">
+                <a href="<?php echo FARMWEB_URL; ?>manage-account">
                   <i class="fa fa-cog"></i> <span>Manage Account</span>
                 </a>
               </li>
               <?php endif; ?>
 
               <li class="treeview <?php if( ($currentroute == 'logout') ) {echo 'active';} ?>">
-                <a href="logout">
+                <a href="<?php echo FARMWEB_URL; ?>logout">
                   <i class="fa fa-exit"></i> <span>Logout</span>
                 </a>
               </li>

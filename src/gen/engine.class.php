@@ -74,6 +74,29 @@ class model extends DBCon{
 
     }
 
+    public function Order($id)
+    {
+        $sql = "SELECT * FROM orders WHERE user_id =".$id;
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+               
+		return $array;
+    }
+
+    public function delOrder($id)
+    {
+
+        // Delete from product
+        $sql    = "DELETE FROM `orders` WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+
+
+        return true;
+    }
+
     public function authEmail($table,$input){
 
         $db = "SELECT * FROM $table WHERE email = '$input' LIMIT 1";
@@ -112,11 +135,24 @@ class model extends DBCon{
         }
 		return $array;
     }
-
+    
     public function viewTable($table)
     {
         $sql = "SELECT * FROM ".$table;
         $sql .= " WHERE status =1";
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+               
+		return $array;
+    }
+
+    public function productCommentByUser($id)
+    {
+        $sql = "SELECT * FROM comments";
+        $sql .= " WHERE user_id =".$id;
         $array = array();
         $query = $this->conector->query($sql);
         while ($row = $query->fetch_array()) {
@@ -148,10 +184,23 @@ class model extends DBCon{
                
 		return $array;
     }
-
+    
     public function getUserName($Id)
     {
         $sql = "SELECT * FROM users";
+        $sql .= " WHERE id =".$Id;
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+               
+		return $array;
+    }
+
+    public function getProductName($Id)
+    {
+        $sql = "SELECT * FROM products";
         $sql .= " WHERE id =".$Id;
         $array = array();
         $query = $this->conector->query($sql);
@@ -361,6 +410,47 @@ class model extends DBCon{
             $array[] = $row;
         }
 		return $array;
+    }
+
+    public function userById($Id)
+    {
+        $sql = "SELECT * FROM `users`";
+        $sql .= " WHERE id = ".$Id;
+        $array = array();
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+            $array[] = $row;
+        }
+		return $array;
+    }
+
+    public function delUser($id)
+    {
+        // Getting img ID to delete it from folder
+
+        $sql    = "SELECT * FROM `users`";
+        $sql    .= " WHERE id =".$id;
+        $query = $this->conector->query($sql);
+        while ($row = $query->fetch_array()) {
+			$array[] = $row;
+		}
+        foreach ($array as $row) {
+            $userImg = $row['img'];
+        }
+
+        // Unlink the images
+        if($userImg!='') {
+            unlink('./inc/ufl/'.$userImg);	
+            //header('location: ./src/product.php');
+        }
+
+        // Delete from product
+        $sql    = "DELETE FROM `users`";
+        $sql    .= " WHERE id =".$id;
+        $query  = $this->conector->query($sql);
+
+
+        return true;
     }
 
 

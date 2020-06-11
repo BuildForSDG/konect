@@ -92,7 +92,7 @@ $vKey   = $Iarray['vkey'];
                             <div class="form-group col-md-6">
                                 <label for="inputGender">Gender</label><br>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="m">
+                                <input class="form-check-input" type="radio" name="gender" checked value="m">
                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -107,7 +107,7 @@ $vKey   = $Iarray['vkey'];
                         </div>
                         <div class="form-group">
                             <div class="form-check">
-                                <input name="accept" class="form-check-input" type="checkbox" id="gridCheck" required>
+                                <input name="accept" class="form-check-input" type="checkbox" id="gridCheck" checked required>
                                 <label class="form-check-label" for="gridCheck">
                                 do you agree with our <a href="#">terms an condition</a>
                                 </label>

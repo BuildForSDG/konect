@@ -167,13 +167,11 @@ session_start();
                 <h4 class="modal-title" id="myModalLabel">Are you sure you want to order for this product?</h4>
             </div>
             <div class="modal-body">
-                <form>
-                    <input name="text" name="name" placeholder="name">
-                </form>
+                <p>Thanks for checking out this product.. :)</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Yes Order</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Continue Checking product</button>
+                <a class="btn btn-danger btn-ok">Take me to cart</a>
             </div>
         </div>
     </div>

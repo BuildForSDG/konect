@@ -2,9 +2,6 @@
 // Defining the website url
 define("FARMWEB_URL", "http://localhost/2020/BuildForSDG/team045/konect-Backend/");
 
-// Getting the Upload url
-define("FARMWEB_UPLOAD", FARMWEB_URL . "inc/ufl" . "/");
-
 function escape($string) {
     //strip_tags();
         return htmlentities($string, ENT_QUOTES, 'UTF-8');
